@@ -1,0 +1,178 @@
+@import url(default.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px; /* 글자크기 17px */
+    font-weight: 400; /* 두께 400 regular */
+    color: #3d3d3d; /* 글자색상 */
+    line-height: 1.4; /* 행간 - 배수 */
+    letter-spacing: 0; /* -20준 경우 -0.02em */
+    word-break: keep-all; /* 단어로(여백을 기준으로) 줄바꿈 */
+    word-wrap: break-word; 
+    /* 단어가 너무 길어서 줄바꿈이 안될때 강제로 줄바꿈
+        word-break: keep-all;로 단어별로(여백) 줄바꿈때문에 생기는 오류 수정 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap {
+    min-width: 1300px;
+    /* 브라우저의 최소 넓이를 지정
+       - 작은 브라우저에서 가로스크롤이 생기면 배경이 짤려서
+       wrapper에서 지정한 width에 좌우여백 20px씩 준 값
+       1260 + 40 = 1300 */
+}
+header { 
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 34px 0 0 0;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    font-size: 22px;
+    color: #1D1D1D;
+    padding: 34px 26px 34px 26px;
+    display: block; 
+    /* a태그는 무조건 block 또는 inline-block */
+}
+
+.visual {
+    height: 700px;
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+    text-align: right;
+}
+.visual h2 {
+    font-size: 55px;
+    line-height: 1.2;
+    padding: 160px 0 11px 0;
+    letter-spacing: -0.02em; /* -20  */
+}
+.visual h2 strong {
+    font-weight: 900;
+}
+
+.biz .tit {
+    text-align: center;
+    margin: 129px 0 35px 0;
+}
+.biz .tit h2 {
+    font-weight: 900;
+    font-size: 45px;
+    letter-spacing: -0.02em;
+}
+.biz .tit h2 strong {
+    color: #015BD5;
+}
+.biz .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .list ul li {
+    width: 297px;
+}
+.biz .list ul li a {
+    display: block; /* a태그는 block아님 inline-block 필수 */
+    text-align: center;
+}
+.biz .list ul li a .inner {
+    margin: 0 20px 0 20px;
+}
+.biz .list ul li a h3 {
+    font-size: 35px;
+    color: #1d1d1d;
+    letter-spacing: -0.02em;
+    margin: 15px 0 10px 0;
+}
+.biz .list ul li a .more {
+    border: 1px solid #CCCCCC;
+    display: block;
+    padding: 12px 0 12px 0;
+    margin: 18px 0 0 0;
+}
+/* a에 마우스를 올렸을때 자세히보기 스타일 */
+.biz .list ul li a:hover .more {
+    border-color: #015BD5;
+    background-color: #015BD5;
+    color: #fff;
+}
+
+.brand {
+    margin: 116px 0 0 0;
+    height: 723px;
+    background: url(../images/brand_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.brand h2 {
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    padding: 190px 0 20px 0;
+}
+.brand .more {
+    margin: 30px 0 0 0;
+}
+.brand .more a {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 12px 44px 12px 44px;
+}
+.brand .more a:hover {
+    background-color: #015BD5;
+    border-color: #015BD5;
+    /* 만약 border가 있던 버튼에 
+       마우스를 오버해서 배경색을 줬다면 
+       border 색상도 배경색으로 같이 줘야함
+       border를 빼면 넓이와 높이가 변경됨 
+       ----> border있던 스타일은 오버해도 border 유지
+
+       border의 두께, 선스타일이 동일하고 색상만 변경하면
+       border-color로 색상만 변경 */
+}
+
+footer {
+    background-color: #2d2d2d;
+    color: rgba(255,255,255,0.8);
+    padding: 70px 0 84px 0;
+}
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li {
+    margin: 0 39px 0 0;
+}
+footer .f_nav ul li:last-child {
+    margin-right: 0;
+}
+footer .f_nav ul li.privacy {
+    font-weight: 900;
+}
+/*
+    li.privacy (띄어쓰기 없음) 라는 의미는
+    <li class="privacy"> 이렇게 코딩된 요소를 선택
+    --- li 중에서 privacy클래스가 있는 요소
+
+    li .privacy (띄어쓰기 있음)
+    <li>
+        <div class="privacy"> 
+    -- li안에 privacy라는 클래스를 갖은 요소
+*/
+footer .f_info {
+    margin: 24px 0 24px 0;
+}
+footer .f_info span {
+    margin: 0 15px 0 0;
+    display: inline-block;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
