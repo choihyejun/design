@@ -1,12 +1,328 @@
-@import url(default.css); /* default.css를 이무너에서 복사해서 넣는 것 처럼 불러오기 */
+@import url(default.css); /* default.css를 이무너?에서 복사해서 넣는 것 처럼 불러오기 */
 @import url(font.css);
 @import url(common.css);
 
+header {
+    position: absolute; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100; 
+    /* header는 무조건 맨위에 있어야 하기 때문에
+    제일 높은 숫자 100을 줌 - 하단 콘텐츠는 100이하의 값을 줌 */
+    width: 100%;
+    /* block에 absolute를 줘도 넓이가 없음(100%안됨) 
+        내부 요소 만큼만 늘어남 */
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin-top: 32px;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    font-size: 23px;
+    font-weight: 800;
+    color: #fff;
+    padding: 37px 29px 34px 29px;
+    /* 위아래 여백을 더했을때 100px을 넘으면 안됨 */
+}
 .visual {
     background: url(../images/visual_bg.png) no-repeat center center / cover;
+    border-bottom-right-radius: 190px ;
+    /* 브라우저의 콘텐츠 높이 100vh로 보는 상대값 */
+}
+.visual .wrapper {
+    position: relative;
     height: 100vh;
+    /* pic는 wrapper를 기준을 오른쪽 하단에 absolute로 배치
+        단 visual에 height가 있는 상태에서는 wrapper는 콘텐츠가 
+        존재하는 만큼만 높이가 잡힘
+        그래서 wrapper에 높이를 주고 visual은 그 높이만큼 들어가게 하면
+        편함. */
+    padding-top: calc(50vh - 179px);
+     /* 50vh -95px을 빼야함. 단위가 안맞음
+        이렇게 단위가 다른 수치를 계산할때 쓰는 식이
+        calc()임 단, 반드시 - + 앞뒤로는 여백을 줘야함
+        단위를 써야함. */
+}
+.visual h2 {
+    text-align: center;
+    /*text-align: right;*/
+}
+.visual .pic {
+    position: absolute; /* wrapper를 기준으로 정렬, a::before 정렬의 중심 */
+    right: -96px;
+    bottom: -94px;
+}
+.visual .pic a {
+    display: block;
+    width: 188px;
+    height: 188px;
+    border-radius: 50%; /* 동그라미는 무조건 50%*/
+    background-color: #004FD6;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 98px;
+    line-height: 1.2;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.15);/*15%*/
+}
+.visual .pic a::before {
+    content: "";
+    position: absolute; /* pic를 기준으로 정렬 */
+    top: 47px;
+    left: 50%;
+    transform: translate(-50%); /* 좌우에 가운데 */
+    width: 40px; /* 아이콘 사이즈 */
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.99984 35.0001C4.08317 35.0001 3.29845 34.6737 2.64567 34.0209C1.99289 33.3681 1.6665 32.5834 1.6665 31.6667V11.6667C1.6665 10.7501 1.99289 9.96536 2.64567 9.31258C3.29845 8.6598 4.08317 8.33341 4.99984 8.33341H10.2498L13.3332 5.00008H23.3332V8.33341H14.7915L11.7498 11.6667H4.99984V31.6667H31.6665V16.6667H34.9998V31.6667C34.9998 32.5834 34.6734 33.3681 34.0207 34.0209C33.3679 34.6737 32.5832 35.0001 31.6665 35.0001H4.99984ZM31.6665 11.6667V8.33341H28.3332V5.00008H31.6665V1.66675H34.9998V5.00008H38.3332V8.33341H34.9998V11.6667H31.6665ZM18.3332 29.1667C20.4165 29.1667 22.1873 28.4376 23.6457 26.9792C25.104 25.5209 25.8332 23.7501 25.8332 21.6667C25.8332 19.5834 25.104 17.8126 23.6457 16.3542C22.1873 14.8959 20.4165 14.1667 18.3332 14.1667C16.2498 14.1667 14.479 14.8959 13.0207 16.3542C11.5623 17.8126 10.8332 19.5834 10.8332 21.6667C10.8332 23.7501 11.5623 25.5209 13.0207 26.9792C14.479 28.4376 16.2498 29.1667 18.3332 29.1667ZM18.3332 25.8334C17.1665 25.8334 16.1804 25.4306 15.3748 24.6251C14.5693 23.8195 14.1665 22.8334 14.1665 21.6667C14.1665 20.5001 14.5693 19.514 15.3748 18.7084C16.1804 17.9029 17.1665 17.5001 18.3332 17.5001C19.4998 17.5001 20.4859 17.9029 21.2915 18.7084C22.0971 19.514 22.4998 20.5001 22.4998 21.6667C22.4998 22.8334 22.0971 23.8195 21.2915 24.6251C20.4859 25.4306 19.4998 25.8334 18.3332 25.8334Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* 아이콘 안짤리고 사이즈에 딱 맞게 나오기 */
+} 
+.visual .pic a:hover {
+   color: #FEEE51;
+   box-shadow: -10px 10px 20px rgb(0, 0, 0, 0.15);/*15%*/
+} 
+.visual .pic a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.99984 35.0001C4.08317 35.0001 3.29845 34.6737 2.64567 34.0209C1.99289 33.3681 1.6665 32.5834 1.6665 31.6667V11.6667C1.6665 10.7501 1.99289 9.96536 2.64567 9.31258C3.29845 8.6598 4.08317 8.33341 4.99984 8.33341H10.2498L13.3332 5.00008H23.3332V8.33341H14.7915L11.7498 11.6667H4.99984V31.6667H31.6665V16.6667H34.9998V31.6667C34.9998 32.5834 34.6734 33.3681 34.0207 34.0209C33.3679 34.6737 32.5832 35.0001 31.6665 35.0001H4.99984ZM31.6665 11.6667V8.33341H28.3332V5.00008H31.6665V1.66675H34.9998V5.00008H38.3332V8.33341H34.9998V11.6667H31.6665ZM18.3332 29.1667C20.4165 29.1667 22.1873 28.4376 23.6457 26.9792C25.104 25.5209 25.8332 23.7501 25.8332 21.6667C25.8332 19.5834 25.104 17.8126 23.6457 16.3542C22.1873 14.8959 20.4165 14.1667 18.3332 14.1667C16.2498 14.1667 14.479 14.8959 13.0207 16.3542C11.5623 17.8126 10.8332 19.5834 10.8332 21.6667C10.8332 23.7501 11.5623 25.5209 13.0207 26.9792C14.479 28.4376 16.2498 29.1667 18.3332 29.1667ZM18.3332 25.8334C17.1665 25.8334 16.1804 25.4306 15.3748 24.6251C14.5693 23.8195 14.1665 22.8334 14.1665 21.6667C14.1665 20.5001 14.5693 19.514 15.3748 18.7084C16.1804 17.9029 17.1665 17.5001 18.3332 17.5001C19.4998 17.5001 20.4859 17.9029 21.2915 18.7084C22.0971 19.514 22.4998 20.5001 22.4998 21.6667C22.4998 22.8334 22.0971 23.8195 21.2915 24.6251C20.4859 25.4306 19.4998 25.8334 18.3332 25.8334Z' fill='%23FEEE51'/%3E%3C/svg%3E%0A");
 }
 
-body {
-    margin-bottom: 500px;
+.culture {
+    margin-top: 170px;
+}
+.culture .wrapper {
+    position: relative; /* more 정렬의 기준*/
+}
+.culture .tit h2 {
+    color: #1d1d1d;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 19px;
+}
+.culture .list {
+    margin: 41px 0 0 0;
+}
+.culture .list ul {
+    display: flex;
+    justify-content: space-between; /*flew 그룹에 주면 중간 여백 설정*/
+}
+.culture .list ul li {
+    width: 404px;
+}
+.culture .list ul li a {
+    display: block; /* a태그에 block 무조건 주기 */
+}
+.culture .list ul li a .photo {
+    overflow: hidden; /* photo 영역 밖에 나가는 이미지 숨김*/
+    font-size: 0;
+    line-height: 0;
+}
+.culture .list ul li a .photo img {
+    transition: 0.5s; /* 만약에 속성이 변경된다면 1초동안 자연스럽게 변경 */
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.culture .list ul li a h3 {
+    margin: 33px 0 13px 0;
+    color: #1d1d1d;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+.culture .list ul li a span {
+    position: relative;
+    display: inline-block;
+    padding-right: 28px; 
+    /* 글자의 오른쪽에 아이콘이 들어가면 그 아이콘이 들어갈 영역까지
+        padding으로 늘려놓음 */
+    margin-top: 13px;
+    color: #8e8e8e;
+    font-size: 15px;
+}
+.culture .list ul li a span::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0252 10.5002L7.6127 7.0877C7.45228 6.92728 7.37207 6.72311 7.37207 6.4752C7.37207 6.22728 7.45228 6.02311 7.6127 5.8627C7.77311 5.70228 7.97728 5.62207 8.2252 5.62207C8.47311 5.62207 8.67728 5.70228 8.8377 5.8627L12.8627 9.8877C12.9502 9.9752 13.0122 10.07 13.0486 10.1721C13.0851 10.2742 13.1033 10.3835 13.1033 10.5002C13.1033 10.6169 13.0851 10.7262 13.0486 10.8283C13.0122 10.9304 12.9502 11.0252 12.8627 11.1127L8.8377 15.1377C8.67728 15.2981 8.47311 15.3783 8.2252 15.3783C7.97728 15.3783 7.77311 15.2981 7.6127 15.1377C7.45228 14.9773 7.37207 14.7731 7.37207 14.5252C7.37207 14.2773 7.45228 14.0731 7.6127 13.9127L11.0252 10.5002Z' fill='%238E8E8E' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.culture .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 80px;
+}
+.culture .more a {
+    display: block;
+    padding:  5px 30px 5px 5px;
+}
+.culture .more a::after {
+    content: "";
+    position: absolute; /* more 기준으로 정렬 */
+    right: 0;
+    top: 6px;
+    width: 21PX;
+    height: 21PX;
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.625 11.375H5.25C5.00208 11.375 4.79427 11.2911 4.62656 11.1234C4.45885 10.9557 4.375 10.7479 4.375 10.5C4.375 10.2521 4.45885 10.0443 4.62656 9.87656C4.79427 9.70885 5.00208 9.625 5.25 9.625H9.625V5.25C9.625 5.00208 9.70885 4.79427 9.87656 4.62656C10.0443 4.45885 10.2521 4.375 10.5 4.375C10.7479 4.375 10.9557 4.45885 11.1234 4.62656C11.2911 4.79427 11.375 5.00208 11.375 5.25V9.625H15.75C15.9979 9.625 16.2057 9.70885 16.3734 9.87656C16.5411 10.0443 16.625 10.2521 16.625 10.5C16.625 10.7479 16.5411 10.9557 16.3734 11.1234C16.2057 11.2911 15.9979 11.375 15.75 11.375H11.375V15.75C11.375 15.9979 11.2911 16.2057 11.1234 16.3734C10.9557 16.5411 10.7479 16.625 10.5 16.625C10.2521 16.625 10.0443 16.5411 9.87656 16.3734C9.70885 16.2057 9.625 15.9979 9.625 15.75V11.375Z' fill='%238E8E8E'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 1s;
+}
+.culture .more a:hover::after {
+    transform: rotate(180deg);
+} 
+
+.tour {
+    padding: 122px 0 113px 0;
+    margin-top: 94px;
+    background-color: #F5F5F5;
+}
+.tour .tit h2 {
+    color: #1d1d1d;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 19px;
+}
+.tour .list {
+    margin: 43px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li {
+    width: 190px;
+}
+.tour .list ul li.on {
+    width: 618px;
+    /* 하나만 크게 보임 */
+}
+.tour .list ul li a {
+    display: block; 
+    height: 354px;
+    /* li와 a 높이를 동일하게 주기 위해서 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    /* 오버되지 않는 li의 스타일 */
+    text-align: center;
+    padding: 260px 0 0 0 ;
+}
+.tour .list ul li.on a  {
+    text-align: left;
+    padding: 210px 0 0 36px;
+}
+.tour .list ul li.list1 a {
+    background-image: url(../images/tour_bg1.jpg);
+}
+.tour .list ul li.list2 a {
+    background-image: url(../images/tour_bg2.jpg);
+}
+.tour .list ul li.list3 a {
+    background-image: url(../images/tour_bg3.jpg);
+}
+.tour .list ul li.list4 a {
+    background-image: url(../images/tour_bg4.jpg);
+}
+/* 오버되지 않는 li의 스타일 */
+.tour .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+
+    margin-bottom: 13px;
+    /* p와의 여백 - 오버했을때만 적용될 스타일이지만
+        지금줘도 문제는 되지 않음, 그럼 미리 스타일 주는게 좋음*/
+}
+.tour .list ul li.on a h3 {
+    font-size: 25px;
+}
+.tour .list ul li a p {
+    display: none; /* 숨겨졌다가 오버하면 나타남 */
+}
+.tour .list ul li.on a p {
+    display: block;
+    /* none으로 숨겼던거 */
+}
+.tour .list ul li a span {
+    /* 오버했을때만 나타날 요소이지만 미리 스타일 주고
+        보이고 안보이고 상태만 변경 */
+    /* display: inline-block; */
+    display: none; /* 숨겨졌다가 오버하면 나타남 */
+    padding-right: 26px;
+    margin: 13px 0 0 0;
+    font-size: 15px;
+    position: relative; /* arter 정렬의 기준*/
+}
+.tour .list ul li.on a span {
+    display: inline-block;
+    /* none으로 숨김요소는 dispaly에 다른 아무 값*/
+}
+.tour .list ul li a span::after {
+   content: "";
+   position: absolute;
+   right: 0;
+   top: 1px;
+   width: 20px;
+   height: 20px;
+   background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0252 10.5002L7.6127 7.0877C7.45228 6.92728 7.37207 6.72311 7.37207 6.4752C7.37207 6.22728 7.45228 6.02311 7.6127 5.8627C7.77311 5.70228 7.97728 5.62207 8.2252 5.62207C8.47311 5.62207 8.67728 5.70228 8.8377 5.8627L12.8627 9.8877C12.9502 9.9752 13.0122 10.07 13.0486 10.1721C13.0851 10.2742 13.1033 10.3835 13.1033 10.5002C13.1033 10.6169 13.0851 10.7262 13.0486 10.8283C13.0122 10.9304 12.9502 11.0252 12.8627 11.1127L8.8377 15.1377C8.67728 15.2981 8.47311 15.3783 8.2252 15.3783C7.97728 15.3783 7.77311 15.2981 7.6127 15.1377C7.45228 14.9773 7.37207 14.7731 7.37207 14.5252C7.37207 14.2773 7.45228 14.0731 7.6127 13.9127L11.0252 10.5002Z' fill='%23ffffff' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: contain;
+}
+.tour .wrapper {
+    position: relative; /*필수*/
+}
+.tour .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 80px;
+}
+.tour .more a {
+    display: block;
+    padding:  5px 30px 5px 5px;
+}
+.tour .more a::after {
+    content: "";
+    position: absolute; /* more 기준으로 정렬 */
+    right: 0;
+    top: 6px;
+    width: 21PX;
+    height: 21PX;
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.625 11.375H5.25C5.00208 11.375 4.79427 11.2911 4.62656 11.1234C4.45885 10.9557 4.375 10.7479 4.375 10.5C4.375 10.2521 4.45885 10.0443 4.62656 9.87656C4.79427 9.70885 5.00208 9.625 5.25 9.625H9.625V5.25C9.625 5.00208 9.70885 4.79427 9.87656 4.62656C10.0443 4.45885 10.2521 4.375 10.5 4.375C10.7479 4.375 10.9557 4.45885 11.1234 4.62656C11.2911 4.79427 11.375 5.00208 11.375 5.25V9.625H15.75C15.9979 9.625 16.2057 9.70885 16.3734 9.87656C16.5411 10.0443 16.625 10.2521 16.625 10.5C16.625 10.7479 16.5411 10.9557 16.3734 11.1234C16.2057 11.2911 15.9979 11.375 15.75 11.375H11.375V15.75C11.375 15.9979 11.2911 16.2057 11.1234 16.3734C10.9557 16.5411 10.7479 16.625 10.5 16.625C10.2521 16.625 10.0443 16.5411 9.87656 16.3734C9.70885 16.2057 9.625 15.9979 9.625 15.75V11.375Z' fill='%238E8E8E'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 1s;
+}
+.tour .more a:hover::after {
+    transform: rotate(180deg);
+} 
+
+
+
+
+#wrap {
+    padding-bottom: 500px;
 }
