@@ -1,0 +1,12 @@
+@import url(default.css); /* default.css를 이무너에서 복사해서 넣는 것 처럼 불러오기 */
+@import url(font.css);
+@import url(common.css);
+
+.visual {
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    height: 100vh;
+}
+
+body {
+    margin-bottom: 500px;
+}
