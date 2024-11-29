@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>배경테스트</title>
+</head>
+<body>
+   <div id="wrap">
+        <div class="fit">
+         
+        </div>
+        <div class="bg">
+            <div class="wrapper">
+                <h2>background-size:cover</h2>
+                <p>배경을 주는 요소에 빈 공간없이 배경이미지를 꽉 채우는 방식,
+                    단 이미지가 짤릴 수 있음
+                </p>
+                <div class="list case1">
+                    <ul>
+                        <li class="list1"><a href="#n">글자 글자</a></li>
+                        <li class="list2"><a href="#n">글자 글자</a></li>
+                    </ul>
+                </div>
+                <h2>background-size:contain</h2>
+                <p>배경을 주는 요소에 빈 공간없이 배경이미지를 꽉 채우는 방식,
+                    단 이미지가 짤릴 수 있음 !!!!!!!!!!!!!!!!글바꾸기
+                </p>
+                <div class="list case2">
+                    <ul>
+                        <li class="list1"><a href="#n">글자 글자</a></li>
+                        <li class="list2"><a href="#n">글자 글자</a></li>
+                    </ul>
+                </div>
+                <h2>background-size: 직접 입력</h2>
+                <p>배경의 크기를 px 또는 %로 직접 입력할 수도 있습니다.
+                    이때는 img 태그와 동일하게 넓이/높이 하나만 입력하면
+                    비율에 맞게 사이즈가 줄어듬 (절대 동시에 주면 안됨)
+                    background-size: 100px; - 넓이가 조절됨 (background-size: 100px auto; 이게 정확한 표현)
+                    background-size: auto 100px; - 높이가 100px로 조절됨<br>
+                    만약 단위를 %로 주면 배경을 준 요소의 넓이/높이를 기준으로 퍼센트 계산함
+                    (배경 이미지 사이즈를 상관없음)
+                </p>
+                <div class="list case3">
+                    <ul>
+                        <li class="list1"><a href="#n">글자 글자</a></li>
+                        <li class="list2"><a href="#n">글자 글자</a></li>
+                    </ul>
+                </div>
+                <div class="list case4">
+                    <ul>
+                        <li class="list1"><a href="#n">글자 글자</a></li>
+                        <li class="list2"><a href="#n">글자 글자</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="over">
+            <div class="wrapper">
+                <h2>img태그로 배경을 코딩한 경우</h2>
+                <p>홈페이지에서 게시물의 이미지를 가져올때는 꼭 img태그로만 가져올 수 있음</p>
+                <div class="list case1">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/bg3.jpg" alt=""></div>
+                                <h3>트리</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/bg4.jpg" alt=""></div>
+                                <h3>선물</h3>
+                            </a>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg_over">
+            <div class="wrapper">
+                <h2>background 마우스 오버시 확대</h2>
+                <p>배경을 확대하려면 background-size로 조절해야함 (호환성)</p>
+                <div class="list">
+                    <ul>
+                        <li class="bg1">
+                            <a href="#n">
+                                <h3>트리</h3>
+                            </a>
+                        </li>
+                        <li class="bg2">
+                            <a href="#n">
+                                <h3>선물</h3>
+                            </a>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
