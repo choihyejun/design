@@ -1,0 +1,135 @@
+@import url(default.css); /* default.css를 이 문서에 복사해서 넣은 것처럼 불러오기 */
+@import url(font.css);
+@import url(common.css);
+
+header {
+    position: absolute; /* body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100; /* 제일 높은 값이 위로 올라감 */
+    color: #fff;
+    width: 100%; /* header에 absolute를 주면 무조건 width:100% */
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 로고 위아래 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+}
+header .logo {
+    margin: 10px 0 0 0;
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 모바일에서만 나옴 */
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+}
+header .gnb .gnb_wrap ul li a {
+    /* 글자 크기 색상 모두 지정 */
+    font-family: 'eulyoo';
+    font-size: 22px;
+    line-height: 100px; /* header  높이 만큼 */
+    padding: 0 25px;
+}
+.visual {
+    overflow: hidden;
+    /* 높이가 낮으면 글자가 영역 밖으로 나갈 수도 있어서 */
+    height: 100vh;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    position: relative; /* scroll 정렬의 기준 */
+}
+.visual .wrapper {
+    padding: 60vh 0 0 0;
+}
+.visual .inner {
+    /* h2와 p 전체의 콘텐츠의 높이를 암 
+       콘첸츠 높이의 절반을 위로 이동 */
+    transform: translateY(-50%);
+}
+.visual h2 {
+    font-family: 'eulyoo';
+    font-size: 100px;
+    font-weight: 800;
+    letter-spacing: -0.07em; /* -7% */
+    line-height: 1;
+    margin: 0 0 14px 0;
+    position: relative; /*span태그 정렬의 기준*/
+}
+.visual h2 span {
+    position: absolute /* h2 기준으로 정렬*/;
+    font-size: 200px;
+    letter-spacing: -0.1em; /* -10% */
+    color: rgba(255, 255, 255, 0.1);
+    left: 115px;
+    top: -72px;
+}
+.visual h2 p {
+    font-size: 20px;
+}
+.visual .scroll {
+    position: absolute; /* visual를 기준으로 정렬, after 정렬의 기준 */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 39px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8); /*80%*/
+}
+.visual .scroll::after {
+    content: "";
+    position: absolute; /* scroll을 기준으로 정렬*/
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    width: 17px;
+    height: 17px;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_40_10)'%3E%3Cpath d='M8.4999 14.4858L13.7061 9.27956C13.8832 9.10247 14.0898 9.01688 14.3259 9.02279C14.562 9.02869 14.7686 9.12018 14.9457 9.29726C15.1228 9.47435 15.2114 9.68095 15.2114 9.91706C15.2114 10.1532 15.1228 10.3598 14.9457 10.5368L9.50927 15.991C9.3676 16.1327 9.20823 16.2389 9.03115 16.3098C8.85406 16.3806 8.67698 16.416 8.4999 16.416C8.32281 16.416 8.14573 16.3806 7.96865 16.3098C7.79156 16.2389 7.63219 16.1327 7.49052 15.991L2.03635 10.5368C1.85927 10.3598 1.77368 10.1502 1.77958 9.9082C1.78548 9.66619 1.87698 9.45664 2.05406 9.27956C2.23114 9.10247 2.43774 9.01393 2.67385 9.01393C2.90996 9.01393 3.11656 9.10247 3.29364 9.27956L8.4999 14.4858Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_40_10'%3E%3Crect width='17' height='17' fill='white' transform='translate(0 17) rotate(-90)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    animation-name: scrllo_move;
+    animation-duration: 3s; /* 3초동안 한번 */
+    animation-iteration-count: infinite; /* 반복 횟수 - 무한*/
+    animation-timing-function: infinite; /* 가속도 삭제 */
+}
+@keyframes scrllo_move {
+    0% { bottom: -15px; }
+    50% { bottom: -30px; }
+    100% { bottom: -15px; }
+}
+@media screen and (max-width:640px){
+                .visual .wrapper {
+                    padding: 60vh 0 0 0;
+                }
+                .visual h2 {
+                    font-size: 45px;
+                    margin: 0 0 14px 0;
+                }
+                .visual h2 span {
+                    font-size: 64px;
+                    letter-spacing: -0.1em; /* -10% */
+                    left: 49px;
+                    top: -20px;
+                }
+                .visual p {
+                    font-size: 15px;
+                }
+                .visual p br {
+                    display: none;
+                }
+                .visual .scroll {
+                    font-size: 12px;
+                }
+                .visual .scroll::after {
+                    bottom: -20px;
+                }
+} /* media */
+
+
+footer {
+    margin-top: 500px;
+}
