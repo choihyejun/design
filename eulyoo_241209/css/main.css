@@ -102,7 +102,7 @@ header .tnb .search::before {
 .visual {
     overflow: hidden;
     /* 높이가 낮으면 글자가 영역 밖으로 나갈 수도 있어서 */
-    height: 100vh;
+    height: 100dvh;
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
     color: #fff;
     position: relative; /* scroll 정렬의 기준 */
