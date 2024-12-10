@@ -108,7 +108,7 @@ header .tnb .search::before {
     position: relative; /* scroll 정렬의 기준 */
 }
 .visual .wrapper {
-    padding: 60vh 0 0 0;
+    padding: 60dvh 0 0 0;
 }
 .visual .inner {
     /* h2와 p 전체의 콘텐츠의 높이를 암 
@@ -168,7 +168,7 @@ header .tnb .search::before {
 }
 @media screen and (max-width:640px){
                 .visual .wrapper {
-                    padding: 60vh 0 0 0;
+                    padding: 60dvh 0 0 0;
                 }
                 .visual h2 {
                     font-size: 45px;
