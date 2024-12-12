@@ -1,0 +1,116 @@
+@import url(default.css); /* default.css를 이 문서에 복사해서 넣은 것처럼 불러오기 */
+@import url(font.css);
+@import url(common.css);
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 186px; /* 로고크기 */
+    height: 30px;
+    font-size: 0; /* 글자숨김*/
+    line-height: 0;
+    background: url(../images/logo_w.svg) no-repeat center center / contain; 
+    /* contain 로고 짤림 방지*/
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none; /* 모바일에서만 나타남 */
+}
+header .gnb .gnb_wrap ul.depth1 {
+    display: flex;
+}
+header .gnb .gnb_wrap ul.depth1 li a {
+    display: block;
+    line-height: 100px; /* header 높이와 동일하게 */
+    padding: 0px 29px; /* 여백의 절반 */
+    font-size: 22px;
+}
+
+/********************마우스를 오버햇을때 & 고정 했을때 **************/
+header.on {
+    position: fixed;
+    background-color: #fff;
+    color: #1d1d1d;
+    border-bottom: 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+header.on .logo a {
+    background-image: url(../images/logo.svg); /* background-image로 바꿀것*/ 
+    /* contain 로고 짤림 방지*/
+}
+
+@media screen and (max-width:640px){ 
+                    header {
+                        height: 56px;
+                    }
+                    header .wrapper {
+                        margin-right: 0;
+                        /* margin: 0 20px; - 원래 이 값인데 오른쪽 여백만 0으로 변경*/
+                    }
+                    header .logo a {
+                        width: 133px; /* 로고크기 */
+                        height: 22px;
+                    }
+                    header .gnb .gnb_open {
+                        display: block;/* 모바일에서만 나타남 */
+                        width: 60px;
+                        height: 56px;
+                        font-size: 0; /* 글자 숨김 */
+                        line-height: 0;
+                        position: relative; /* before 정렬의 기준 */
+                    }
+                    header .gnb .gnb_open::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 20C3.71667 20 3.47917 19.9042 3.2875 19.7125C3.09583 19.5208 3 19.2833 3 19C3 18.7167 3.09583 18.4792 3.2875 18.2875C3.47917 18.0958 3.71667 18 4 18H20C20.2833 18 20.5208 18.0958 20.7125 18.2875C20.9042 18.4792 21 18.7167 21 19C21 19.2833 20.9042 19.5208 20.7125 19.7125C20.5208 19.9042 20.2833 20 20 20H4ZM4 14C3.71667 14 3.47917 13.9042 3.2875 13.7125C3.09583 13.5208 3 13.2833 3 13C3 12.7167 3.09583 12.4792 3.2875 12.2875C3.47917 12.0958 3.71667 12 4 12H20C20.2833 12 20.5208 12.0958 20.7125 12.2875C20.9042 12.4792 21 12.7167 21 13C21 13.2833 20.9042 13.5208 20.7125 13.7125C20.5208 13.9042 20.2833 14 20 14H4ZM4 8C3.71667 8 3.47917 7.90417 3.2875 7.7125C3.09583 7.52083 3 7.28333 3 7C3 6.71667 3.09583 6.47917 3.2875 6.2875C3.47917 6.09583 3.71667 6 4 6H20C20.2833 6 20.5208 6.09583 20.7125 6.2875C20.9042 6.47917 21 6.71667 21 7C21 7.28333 20.9042 7.52083 20.7125 7.7125C20.5208 7.90417 20.2833 8 20 8H4Z' fill='white'/%3E%3C/svg%3E%0A");
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 30px; /* 아이콘 사이즈*/
+                    }
+                    header .gnb .gnb_wrap {
+                        display: none; /* 메뉴를 클릭해야 나타남 */
+                    }
+                    /* header 고정 또는 오버 */
+                    header.on .gnb .gnb_open::before {
+                        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 20C3.71667 20 3.47917 19.9042 3.2875 19.7125C3.09583 19.5208 3 19.2833 3 19C3 18.7167 3.09583 18.4792 3.2875 18.2875C3.47917 18.0958 3.71667 18 4 18H20C20.2833 18 20.5208 18.0958 20.7125 18.2875C20.9042 18.4792 21 18.7167 21 19C21 19.2833 20.9042 19.5208 20.7125 19.7125C20.5208 19.9042 20.2833 20 20 20H4ZM4 14C3.71667 14 3.47917 13.9042 3.2875 13.7125C3.09583 13.5208 3 13.2833 3 13C3 12.7167 3.09583 12.4792 3.2875 12.2875C3.47917 12.0958 3.71667 12 4 12H20C20.2833 12 20.5208 12.0958 20.7125 12.2875C20.9042 12.4792 21 12.7167 21 13C21 13.2833 20.9042 13.5208 20.7125 13.7125C20.5208 13.9042 20.2833 14 20 14H4ZM4 8C3.71667 8 3.47917 7.90417 3.2875 7.7125C3.09583 7.52083 3 7.28333 3 7C3 6.71667 3.09583 6.47917 3.2875 6.2875C3.47917 6.09583 3.71667 6 4 6H20C20.2833 6 20.5208 6.09583 20.7125 6.2875C20.9042 6.47917 21 6.71667 21 7C21 7.28333 20.9042 7.52083 20.7125 7.7125C20.5208 7.90417 20.2833 8 20 8H4Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+                    }
+                    
+}/*media 종료*/
+
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.jpg) no-repeat center center;
+}
+
+aside {
+    margin: 1000px 20px 200px 0;
+    text-align: right;
+}
+aside .top {
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    line-height: 64px; /* 위아래 가운데 */
+    background-color: #25A37B;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+}
