@@ -21,7 +21,7 @@
             모바일에서 메뉴를 열었을때 : menu_mo
             검색을 클릭했을때(pc/mobile 공통) : sch_open
         -->
-        <header class="fixed sch_open">
+        <header>
            <h1 class="logo"><a href="index.html">PETcare</a></h1>
            <nav class="gnb">
                 <button class="gnb_open">메뉴 열기</button>
@@ -73,10 +73,12 @@
                         <div class="search_area">
                             <form>
                                 <fieldset>
-                                    <legend>검색</legend>
-                                    <label for="keyword">검색어입력</label>
-                                    <input type="text" id="keyword"> <!--검색어입력-->
-                                    <input type="submit"> <!-- 검색버튼-->
+                                    <div class="inner">
+                                        <legend>검색</legend>
+                                        <label for="keyword">검색어입력</label>
+                                        <input type="text" id="keyword" class="keyword"> <!--검색어입력-->
+                                        <input type="submit" class="btn"> <!-- 검색버튼-->
+                                    </div>
                                 </fieldset>
                             </form>
                         </div>
@@ -91,18 +93,6 @@
                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                         <li class="swiper-slide">
-                            <div class="photo"><img src="images/visual1.jpg" alt="동물사진"></div>
-                            <div class="visual_txt">
-                                <div class="wrapper">
-                                    <h3>견디지마, 지켜줄개</h3>
-                                    <p>
-                                        외로움을 견디고 있는 반려동물에게<br>
-                                        새로운 희망과 사랑을 전하기 위해 만들어 졌습니다.
-                                    </p>
-                                </div>
-                            </div>
-                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
-                        <li class="swiper-slide">
                             <div class="photo"><img src="images/visual2.jpg" alt="동물사진2"></div>
                             <div class="visual_txt">
                                 <div class="wrapper">
@@ -111,6 +101,18 @@
                                     <p>
                                         반려동물의 실종은 가족뿐만 아니라<br>
                                         실종된 동물들에게도 힘들고 괴로운 고통입니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual1.jpg" alt="동물사진"></div>
+                            <div class="visual_txt">
+                                <div class="wrapper">
+                                    <h3>견디지마, 지켜줄개</h3>
+                                    <p>
+                                        외로움을 견디고 있는 반려동물에게<br>
+                                        새로운 희망과 사랑을 전하기 위해 만들어 졌습니다.
                                     </p>
                                 </div>
                             </div>
