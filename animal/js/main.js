@@ -117,13 +117,16 @@ $(document).ready(function(){
     // 오버한 li에 over 클래스가 추가..
     // header에 menu_pc 클래스 추가
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
-        //이전에 오버했던 메뉴의 over를 삭제하기 위해서 모든 li의 over 지웟다가 오버한 애만 추가
-        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-        $(this).addClass('over')
-        $('header').addClass('menu_pc')
-        $('header').addClass('fixed')
-        //console.log('오버다')
-        
+        if(device_status == 'pc'){//PC모드일때
+            if($('header').hasClass('sch_open') == false){
+            //이전에 오버했던 메뉴의 over를 삭제하기 위해서 모든 li의 over 지웟다가 오버한 애만 추가
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+            $('header').addClass('menu_pc')
+            $('header').addClass('fixed')
+            //console.log('오버다')
+        }
+     }
     })
     $('header .gnb .gnb_wrap ul.depth1').on('mouseleave', function(){
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
