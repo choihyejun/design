@@ -113,6 +113,24 @@ header.fixed .logo a::before {
                 color: #14C898;
                 text-decoration: underline;
             }
+            header .gnb .gnb_wrap ul.depth2 > li > a span {
+                position: relative;
+                display: inline;
+            }
+            header .gnb .gnb_wrap ul.depth2 > li > a[target="_blank"] span {
+                padding-right: 24px;
+            }
+            header .gnb .gnb_wrap ul.depth2 > li > a[target="_blank"] span::before{
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0px;
+                width: 22px;
+                height: 22px;
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 15.75C3.3375 15.75 2.98438 15.6031 2.69063 15.3094C2.39687 15.0156 2.25 14.6625 2.25 14.25V3.75C2.25 3.3375 2.39687 2.98438 2.69063 2.69063C2.98438 2.39687 3.3375 2.25 3.75 2.25H9V3.75H3.75V14.25H14.25V9H15.75V14.25C15.75 14.6625 15.6031 15.0156 15.3094 15.3094C15.0156 15.6031 14.6625 15.75 14.25 15.75H3.75ZM7.275 11.775L6.225 10.725L13.2 3.75H10.5V2.25H15.75V7.5H14.25V4.8L7.275 11.775Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
 
             header.fixed .gnb .gnb_wrap ul.depth2 > li.over > a {
                 color: #14C898;
@@ -373,6 +391,24 @@ header.fixed .logo a::before {
                     display: block;
                     font-size: 17px;
                     padding: 9px 0;
+                }
+                header .gnb .gnb_wrap ul.depth2 > li > a > span {
+                    display: inline-block;
+                    position: relative;
+                }
+                header .gnb .gnb_wrap ul.depth2 > li > a[target="_blank"] span {
+                    padding-right: 24px;
+                }
+                header .gnb .gnb_wrap ul.depth2 > li > a[target="_blank"] span::before{
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 0px;
+                    width: 22px;
+                    height: 22px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 15.75C3.3375 15.75 2.98438 15.6031 2.69063 15.3094C2.39687 15.0156 2.25 14.6625 2.25 14.25V3.75C2.25 3.3375 2.39687 2.98438 2.69063 2.69063C2.98438 2.39687 3.3375 2.25 3.75 2.25H9V3.75H3.75V14.25H14.25V9H15.75V14.25C15.75 14.6625 15.6031 15.0156 15.3094 15.3094C15.0156 15.6031 14.6625 15.75 14.25 15.75H3.75ZM7.275 11.775L6.225 10.725L13.2 3.75H10.5V2.25H15.75V7.5H14.25V4.8L7.275 11.775Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
                 }
                 /************ 1차 메뉴가 열렸을때 *****************/
                 header .gnb .gnb_wrap ul.depth1 > li.open > a {
@@ -677,6 +713,301 @@ header.fixed .logo a::before {
                     background-size: 6px;
                 }
 }/* @medi */
+
+.find {
+    background-color: #373E48;
+    color: #fff;
+    padding: 140px 0 117px 0;
+}
+.find h2 {
+    font-family: 'Cafe24Ohsquare';
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center; 
+    margin: 0 0 26px 0; 
+}
+.find .tab_content {
+    margin: 36px 0 0 0;
+}
+.find .tab_content .tab_panel {
+    display: none;
+}
+.find .tab_content .tab_panel.active {
+    display: block;
+}
+.find .tab_content .tab_panel h3 {
+    display: none;
+}
+
+.find .tab_content .tab_panel .swiper ul li a {
+    display: block;
+}
+.find .tab_content .tab_panel .swiper ul li a .photo {
+    height: 406px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.find .tab_content .tab_panel .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.find .tab_content .tab_panel .swiper ul li a .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.find .tab_content .tab_panel .swiper ul li a h4 {
+    margin: 15px 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+.find .tab_content .tab_panel .swiper ul li a h4 strong {
+    padding: 6px 20px 5px 20px;
+    border-radius: 20px;
+}
+.find .tab_content .tab_panel .swiper ul li a h4 strong.cate01 {
+    background-color: #14C898;
+}
+.find .tab_content .tab_panel .swiper ul li a h4 strong.cate02 {
+    background-color: #A67CF8;
+}
+.find .tab_content .tab_panel .swiper ul li a h4 strong.cate03 {
+    background-color: #F2B539;
+}
+.find .tab_content .tab_panel .swiper ul li a h4 strong.cate_and {
+    background-color: #8F8E8E;
+}
+.find .tab_content .tab_panel .swiper ul li a h4 span {
+    display: block;
+    width: calc(100% - 87px);
+    line-height: 2.0;
+    /*1줄제한*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.find .tab_content .tab_panel .swiper ul li a ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 0 0 ;
+}
+.find .tab_content .tab_panel.swiper ul li a ul li strong {
+    color: rgba(255, 255, 255, 0.8);
+}
+.find .tab_content .tab_panel .swiper ul li a ul li span {
+        width: calc(100% - 74px); /*글자포함 여백*/
+        /*1줄제한*/
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+}
+.find .tab_content .tab_panel .btn_wrap {
+    margin: 75px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px
+}
+.find .tab_content .tab_panel .btn_wrap button {
+    font-size: 0;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: relative;
+}
+.find .tab_content .tab_panel .btn_wrap button::before { /*??안먹음*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.40813 5.13669L5.20622 1.36923C5.33541 1.24109 5.39785 1.09158 5.39354 0.920724C5.38923 0.749864 5.32249 0.600362 5.1933 0.472217C5.06412 0.344072 4.9134 0.28 4.74115 0.28C4.5689 0.28 4.41818 0.344072 4.289 0.472217L0.310047 4.40627C0.206698 4.50878 0.129186 4.62411 0.0775115 4.75226C0.0258369 4.8804 -4.36367e-07 5.00855 -4.25164e-07 5.13669C-4.13961e-07 5.26484 0.0258369 5.39298 0.0775116 5.52113C0.129186 5.64927 0.206698 5.7646 0.310048 5.86712L4.289 9.81398C4.41818 9.94213 4.57105 10.0041 4.74761 9.99979C4.92416 9.99552 5.07703 9.92931 5.20622 9.80117C5.33541 9.67302 5.4 9.52352 5.4 9.35266C5.4 9.1818 5.33541 9.0323 5.20622 8.90415L1.40813 5.13669Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.find .tab_content .tab_panel .btn_wrap button .next::before {
+    transform: rotate(180deg); /*180도 회전*/
+}
+.find .tab_content .tab_panel .btn_wrap .more a {
+    display: block;
+    line-height: 30px;
+    height: 30px;
+    width: 15px;
+    padding: 0 35px 0 20px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+    position: relative;
+}
+.find .tab_content .tab_panel .btn_wrap .more a::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.86641 9.17539H4.49141C4.30016 9.17539 4.13984 9.1107 4.01047 8.98133C3.88109 8.85195 3.81641 8.69164 3.81641 8.50039C3.81641 8.30914 3.88109 8.14883 4.01047 8.01945C4.13984 7.89008 4.30016 7.82539 4.49141 7.82539H7.86641V4.45039C7.86641 4.25914 7.93109 4.09883 8.06047 3.96945C8.18984 3.84008 8.35016 3.77539 8.54141 3.77539C8.73266 3.77539 8.89297 3.84008 9.02234 3.96945C9.15172 4.09883 9.21641 4.25914 9.21641 4.45039V7.82539H12.5914C12.7827 7.82539 12.943 7.89008 13.0723 8.01945C13.2017 8.14883 13.2664 8.30914 13.2664 8.50039C13.2664 8.69164 13.2017 8.85195 13.0723 8.98133C12.943 9.1107 12.7827 9.17539 12.5914 9.17539H9.21641V12.5504C9.21641 12.7416 9.15172 12.902 9.02234 13.0313C8.89297 13.1607 8.73266 13.2254 8.54141 13.2254C8.35016 13.2254 8.18984 13.1607 8.06047 13.0313C7.93109 12.902 7.86641 12.7416 7.86641 12.5504V9.17539Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width:640px){ 
+                    .find {
+                        padding: 86px 0 108px 0;
+                    }
+                    .find h2 {
+                        font-size: 30px;
+                        margin: 0 0 23px 0;
+                    }
+                    .find .tab_list ul {
+                        gap:10px
+                    }
+                    .find .tab_list ul li button {
+                        padding: 10px 25px;
+                        font-size: 20px;
+                    }
+                    .find .tab_content {
+                        margin: 25px 0 0 0;
+                    } 
+                    .find .tab_content .tab_panel .swiper > ul > li {
+                        width: 156px;
+                    }
+                    .find .tab_content .tab_panel .swiper ul li a .photo {
+                        height: 211px;
+                        border-radius: 10px;
+                    }
+                    .find .tab_content .tab_panel .swiper ul li a h4 {
+                        margin: 12px 0 10px 0;
+                        font-size: 17px;
+                    }
+                    .find .tab_content .tab_panel .swiper ul li a h4 strong {
+                        padding: 3px 16px 2px 16px;
+                    }
+                    .find .tab_content .tab_panel .swiper ul li a h4 span {
+                        width: calc(100% - 74px);
+                    }
+                    .find .tab_content .tab_panel .swiper ul li a ul li {
+                        margin: 3px 0 0 0 ;
+                    }
+                    .find .tab_content .tab_panel .swiper ul li a ul li span {
+                            width: calc(100% - 76px); /*글자포함 여백*/
+                    }
+                    .find .tab_content .tab_panel .btn_wrap {
+                        margin: 75px 0 0 0;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 5px
+                    }
+                    .find .tab_content .tab_panel .btn_wrap button {
+                        font-size: 0;
+                        line-height: 0;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        border: 1px solid #fff;
+                        position: relative;
+                    }
+                    .find .tab_content .tab_panel .btn_wrap button::before {
+                      background-size: 17px;
+                    }
+                    .find .tab_content .tab_panel .btn_wrap .more a {
+                        display: block;
+                        line-height: 30px;
+                        height: 30px;
+                        width: 15px;
+                        padding: 0 35px 0 20px;
+                        border-radius: 15px;
+                        border: 1px solid #fff;
+                        position: relative;
+                    }
+                    .find .tab_content .tab_panel .btn_wrap .more a::before{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 15px;
+                        height: 16px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.86641 9.17539H4.49141C4.30016 9.17539 4.13984 9.1107 4.01047 8.98133C3.88109 8.85195 3.81641 8.69164 3.81641 8.50039C3.81641 8.30914 3.88109 8.14883 4.01047 8.01945C4.13984 7.89008 4.30016 7.82539 4.49141 7.82539H7.86641V4.45039C7.86641 4.25914 7.93109 4.09883 8.06047 3.96945C8.18984 3.84008 8.35016 3.77539 8.54141 3.77539C8.73266 3.77539 8.89297 3.84008 9.02234 3.96945C9.15172 4.09883 9.21641 4.25914 9.21641 4.45039V7.82539H12.5914C12.7827 7.82539 12.943 7.89008 13.0723 8.01945C13.2017 8.14883 13.2664 8.30914 13.2664 8.50039C13.2664 8.69164 13.2017 8.85195 13.0723 8.98133C12.943 9.1107 12.7827 9.17539 12.5914 9.17539H9.21641V12.5504C9.21641 12.7416 9.15172 12.902 9.02234 13.0313C8.89297 13.1607 8.73266 13.2254 8.54141 13.2254C8.35016 13.2254 8.18984 13.1607 8.06047 13.0313C7.93109 12.902 7.86641 12.7416 7.86641 12.5504V9.17539Z' fill='white'/%3E%3C/svg%3E%0A");
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }  
+
+}/*media*/
+
+.slogan {
+    padding: 196px 0 146px 0 ;
+    background-color: #F9F9F9;
+}
+.slogan h2 {
+    display: none;
+}
+.slogan .tit {
+    color: #1d1d1d;
+    font-family: 'Cafe24Ohsquare';
+    font-weight: 700; 
+    font-size: 40px;
+    line-height: 1.8;/*배수*/
+    text-align: center;
+}
+.slogan .tit span {
+    display: inline-block;
+    height: 1em;
+    position: relative; /*before 정렬의 기준*/
+}
+.slogan .tit span::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 90%; /*대략 제한*/
+    background-position: bottom top;
+    background-repeat: no-repeat;
+    background-size: contain; /*안짤리게*/
+}
+.slogan .tit .txt01 {
+    width: 4.5em; /*글자 띄어쓰기 1개 들어가는 넓이단위 1em*/
+}
+.slogan .tit .txt02 {
+    width: 3em;
+}
+.slogan .tit .txt03 {
+    width: 5em; 
+}
+.slogan .tit .txt04 {
+    width: 4em; 
+}
+.slogan .tit span.txt01::before {
+    background-image: url(../images/slogan01.png);
+    height: 3.8em;
+    bottom: -1em;
+}
+.slogan .tit span.txt02::before {
+    background-image: url(../images/slogan02.png);
+    height: 2.8em;
+    bottom: -1em;
+}
+.slogan .tit span.txt03::before {
+    background-image: url(../images/slogan03.png);
+    height: 3.8em;
+    bottom: -1em;
+}
+.slogan .tit span.txt03::before {
+    background-image: url(../images/slogan04.png);
+    height: 3.8em;
+    bottom: -1em;
+}
+
+
+
+.slogan .sub_txt {
+    margin: 24px 0 0 0 ;
+    font-size: 15px;
+    text-align: center;
+    color: #555;
+}
+
+
 
 
 

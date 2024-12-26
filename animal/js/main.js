@@ -3,6 +3,7 @@ $(document).ready(function(){
     let device_status // 브라우저가 pc인지 mobile 상태인지
     let window_w //브라우저의 넓이
     let scrolling //브라우저가 스크롤 된 값
+    let tab_name //find의 클릭한 tab의 이름
 
     //*********************** visual 팝업 시작 *******************************/
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -186,22 +187,22 @@ $(document).ready(function(){
 
     //***************** 찾습니다. 가족을 시작 **********************/
     
-const find_panal01_swiper = new Swiper('.find .panal01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+const find_panel01_swiper = new Swiper('.find .panel01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
     slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
     spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
     breakpoints: {
-        1300: {    /* 1280px 이상일때 적용 */
+        641: {    /* 1280px 이상일때 적용 */
             slidesPerView: 4,
             spaceBetween: 24,
         },
     },
     loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.find .tab_content .panel01 .btn_wrap .next',
+        prevEl: '.find .tab_content .panel01 .btn_wrap .prev',
     },
 });
-const find_panal02_swiper = new Swiper('.find .panal02 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+const find_panel02_swiper = new Swiper('.find .panel02 .swiper', { /* 팝업을 감싼는 요소의 class명 */
     slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
     spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
     breakpoints: {
@@ -212,13 +213,32 @@ const find_panal02_swiper = new Swiper('.find .panal02 .swiper', { /* 팝업을 
     },
     loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.find .tab_content .panel02 .btn_wrap .next',
+        prevEl: '.find .tab_content .panel02 .btn_wrap .prev',
     },
 });
     
 
 
     //***************** 찾습니다. 가족을 종료 **********************/
+
+    /***************** 찾습니다. 가족을 탭 기능 시작  **********************/
+    /*.find .tab_list ul li 버튼을 누른 후 하는일  
+        li에 active 클래스 추가, li button에 title="선택됨" 입력
+        li에 data-tab의 값을 가져와서 .tab_content .tab_panel 중에서 data-tab이 같은 값인 요소 찾아서
+    
+    */
+    $('.find .tab_list ul li').on('click', function(){
+        $('.find .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
+        $('.find .tab_list ul li button').attr('title', '')
+        tab_name = $(this).attr('data-tab')
+        console.log(tab_name)
+        $('.find .tab_content .tab_panel').removeClass('active')
+        $('.find .tab_content').find('[data-tab="'+tab_name+'"]').addClass('active')
+    })
+
+
+    /***************** 찾습니다. 가족을 탭 기능 종료  **********************/
 
 })//$(document).ready
