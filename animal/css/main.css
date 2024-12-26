@@ -103,7 +103,7 @@ header.fixed .logo a::before {
                 border-radius: 0 0px 20px 20px;
                 padding: 34px 40px;
             }
-            header .gnb .gnb_wrap ul.depth2 > li > a { /* 꺾세가 뭔지..?? ul 옆 . 띄어쓰기안하고 붙이는 이유*/
+            header .gnb .gnb_wrap ul.depth2 > li > a { 
                 display: block;
                 line-height: 40px;
                 white-space: nowrap; /* 줄바꿈 금지*/
@@ -325,9 +325,87 @@ header.fixed .logo a::before {
                 }
                 header .gnb .gnb_wrap {
                     display: none; /*숨김*/
+                    position: absolute; /* header를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100dvh; /* 브라우저 높이와 동일하게 */
+                    background-color: #fff;
+                    color: #555;
                 }
+                header .gnb .gnb_wrap ul.depth1 {
+                    margin: 66px 0 0 0;
+                    height: calc(100dvh - 66px);
+                    overflow-y: auto;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li {
+                    border-bottom: 1px solid #ccc;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li:first-child {
+                    border-top: 1px solid #ccc;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li > a {
+                    display: block;
+                    padding: 16px 45px 16px 20px;
+                    color: #1d1d1d;
+                    font-size: 20px;
+                    position: relative; /* after 정렬의 기준 */
+                }
+                /*하위메뉴가 존재하는 a의 경우*/
+                header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a::after {
+                    content: "";
+                    position: absolute;
+                    right: 22px;
+                    top: 21px;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.9998 13.2925L16.246 9.04647C16.3395 8.9528 16.4543 8.9028 16.5903 8.89647C16.7261 8.88997 16.8472 8.93997 16.9535 9.04647C17.06 9.1528 17.1133 9.27072 17.1133 9.40022C17.1133 9.52972 17.06 9.64764 16.9535 9.75397L12.5653 14.1425C12.4779 14.2296 12.3888 14.2909 12.2978 14.3262C12.2068 14.3614 12.1074 14.379 11.9998 14.379C11.8921 14.379 11.7928 14.3614 11.7018 14.3262C11.6108 14.2909 11.5216 14.2296 11.4343 14.1425L7.04603 9.75397C6.95236 9.66047 6.90236 9.54572 6.89603 9.40972C6.88953 9.27389 6.93953 9.1528 7.04603 9.04647C7.15236 8.93997 7.27028 8.88672 7.39978 8.88672C7.52928 8.88672 7.6472 8.93997 7.75353 9.04647L11.9998 13.2925Z' fill='%23555555' stroke='%23555555'/%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                header .gnb .gnb_wrap ul.depth2 {
+                    display: none; /* 숨김 */
+                    background-color: #F7F7F7;
+                    padding: 14px 0 14px 20px;
+                }
+                header .gnb .gnb_wrap ul.depth2 > li > a {
+                    display: block;
+                    font-size: 17px;
+                    padding: 9px 0;
+                }
+                /************ 1차 메뉴가 열렸을때 *****************/
+                header .gnb .gnb_wrap ul.depth1 > li.open > a {
+                    color: #14C898;
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.open:has(ul.depth2) > a::after {
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0002 10.7075L7.75397 14.9535C7.66047 15.0472 7.54572 15.0972 7.40972 15.1035C7.27389 15.11 7.1528 15.06 7.04647 14.9535C6.93997 14.8472 6.88672 14.7293 6.88672 14.5998C6.88672 14.4703 6.93997 14.3524 7.04647 14.246L11.4347 9.85753C11.5221 9.77036 11.6112 9.70912 11.7022 9.67378C11.7932 9.63861 11.8926 9.62103 12.0002 9.62103C12.1079 9.62103 12.2072 9.63861 12.2982 9.67378C12.3892 9.70912 12.4784 9.77036 12.5657 9.85753L16.954 14.246C17.0476 14.3395 17.0976 14.4543 17.104 14.5903C17.1105 14.7261 17.0605 14.8472 16.954 14.9535C16.8476 15.06 16.7297 15.1133 16.6002 15.1133C16.4707 15.1133 16.3528 15.06 16.2465 14.9535L12.0002 10.7075Z' fill='%2314C898' stroke='%2314C898'/%3E%3C/svg%3E%0A");
+                }
+                header .gnb .gnb_wrap ul.depth1 > li.open ul.depth2 {
+                    display: block; /* 나타남 */
+                }
+
                 header .gnb .gnb_close {
                     display: none; /*숨김*/
+                    position: absolute; /* header를 기준으로 정렬 */
+                    right: 0;
+                    top: 0;
+                    z-index: 10;
+                    width: 56px;
+                    height: 56px;
+                    font-size: 0; /* 글자 숨김 */
+                    line-height: 0;
+                }
+                header .gnb .gnb_close::before {
+                    content: "";
+                    position: absolute; /* gnb_close를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0003 15.2291L8.08176 21.1479C7.92017 21.3093 7.71708 21.392 7.47247 21.3959C7.22805 21.3995 7.02126 21.3169 6.85209 21.1479C6.68312 20.9788 6.59863 20.7738 6.59863 20.5331C6.59863 20.2924 6.68312 20.0874 6.85209 19.9183L12.7709 13.9998L6.85209 8.08127C6.6907 7.91969 6.60806 7.71659 6.60417 7.47198C6.60048 7.22756 6.68312 7.02077 6.85209 6.8516C7.02126 6.68263 7.2262 6.59814 7.46692 6.59814C7.70765 6.59814 7.91259 6.68263 8.08176 6.8516L14.0003 12.7704L19.9188 6.8516C20.0803 6.69021 20.2834 6.60758 20.5281 6.60369C20.7725 6.59999 20.9793 6.68263 21.1484 6.8516C21.3174 7.02077 21.4019 7.22571 21.4019 7.46644C21.4019 7.70716 21.3174 7.9121 21.1484 8.08127L15.2296 13.9998L21.1484 19.9183C21.3098 20.0799 21.3925 20.283 21.3963 20.5276C21.4 20.772 21.3174 20.9788 21.1484 21.1479C20.9793 21.3169 20.7743 21.4014 20.5336 21.4014C20.2929 21.4014 20.0879 21.3169 19.9188 21.1479L14.0003 15.2291Z' fill='%233D3D3D'/%3E%3C/svg%3E%0A");
+                    background-position: center center;
+                    background-repeat: no-repeat;
                 }
                 header .tnb {
                     position: absolute; /* header 를 기준으로 정렬 absolute */
@@ -336,6 +414,26 @@ header.fixed .logo a::before {
                 }
                 header .tnb .paper {
                     display: none; /*숨김*/
+                    position: fixed; 
+                    /* header 고정 - fixed 죽어도 body를 기준으로 정렬 (감싸는 요소가 position이 있어도)  */
+                    left: 20px;
+                    top: 16px;
+                    z-index: 10;
+                    background-color: #EDEDED;
+                    color: #555;
+                    border-radius: 25px;
+                    padding: 8px 43px 5px 21px;
+                }
+                header .tnb .paper::after {
+                    content: "";
+                    position: absolute; /* paper를 기준으로 정렬 */
+                    right: 22px;
+                    top: 11px;
+                    width: 9px;
+                    height: 9px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.7865 1.6885L0.8095 8.6655C0.716 8.759 0.6045 8.80258 0.475 8.79625C0.3455 8.78975 0.233917 8.73975 0.14025 8.64625C0.04675 8.55258 0 8.43675 0 8.29875C0 8.16075 0.04675 8.04708 0.14025 7.95775L7.098 1H2.2865C2.14483 1 2.02608 0.952 1.93025 0.856C1.83442 0.76 1.7865 0.641083 1.7865 0.499249C1.7865 0.357416 1.83442 0.23875 1.93025 0.14325C2.02608 0.0477505 2.14483 0 2.2865 0H7.97875C8.20758 0 8.39942 0.0774169 8.55425 0.23225C8.70908 0.387084 8.7865 0.578916 8.7865 0.80775V6.5C8.7865 6.64167 8.7385 6.76042 8.6425 6.85625C8.5465 6.95208 8.42758 7 8.28575 7C8.14392 7 8.02525 6.95208 7.92975 6.85625C7.83425 6.76042 7.7865 6.64167 7.7865 6.5V1.6885Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+                    background-repeat: no-repeat;
+                    background-position: center center;
                 }
                 header .tnb .search .search_open {
                    width: 35px;
@@ -346,7 +444,7 @@ header.fixed .logo a::before {
                 }
                 header .tnb .search .search_open::before {
                     content: "";
-                    position: absolute;
+                    position: absolute; /* search_open */
                     top: 0;
                     left: 0;
                     width: 100%;
@@ -451,7 +549,7 @@ header.fixed .logo a::before {
                     background-color: rgba(0, 0, 0, 0.5);
                 }
 
-                /********* 모바일 메뉴 열렸을때 시작 header menu_mo  *****************/
+                /********* 모바일 메뉴가 열렸을때 시작 header menu_mo  *****************/
                 header.menu_mo .gnb .gnb_wrap {
                     display: block; /* 나타남 */
                 }
@@ -461,10 +559,9 @@ header.fixed .logo a::before {
                 header.menu_mo .tnb .paper {
                     display: block; /* 나타남 */
                 }
-                /* 모바일 메뉴 열렸을때  header menu_mo 종료 */
-   
-
-}/* media */
+                /* 모바일 메뉴가 열렸을때  header menu_mo 종료 */
+}
+/* media */
 /***************************header 모바일 종료 ************************/
 
 
@@ -476,7 +573,7 @@ header.fixed .logo a::before {
     line-height: 0;
 }
 .visual .swiper ul li {
-    height: 950px;
+    height: 900px;
     position: relative; /* photo 정렬의 기준 */
 }
 .visual .swiper ul li .photo {
@@ -495,10 +592,10 @@ header.fixed .logo a::before {
 }
 .visual .swiper ul li .visual_txt {
     color: #fff;
-    text-align: right;
+    text-align: left;
 }
 .visual .swiper ul li .visual_txt h3 {
-    margin: 358px 0 0 0;
+    margin: 510px 0 0 0;
     font-family: 'Cafe24Ohsquare';
     font-size: 46px;
     font-weight: 400;
@@ -509,7 +606,7 @@ header.fixed .logo a::before {
     position: absolute; /* visual을 기준으로 정렬*/
     left: 50%; /* 정렬의 기준 visual 넓이의 절반*/
     transform: translate(-50%); /* btn_wrap의 절반*/
-    bottom: 50px;
+    bottom: 30px;
     z-index: 10; /*위로*/
     display: flex;
     gap : 5px;
@@ -556,7 +653,7 @@ header.fixed .logo a::before {
                     height: 406px;
                 }
                 .visual .swiper ul li .visual_txt h3 {
-                    margin: 190px 0 0 0;
+                    margin: 230px 0 0 0;
                     font-size: 25px;
                 }
                 .visual .btn_wrap {
@@ -580,6 +677,8 @@ header.fixed .logo a::before {
                     background-size: 6px;
                 }
 }/* @medi */
+
+
 
 footer {
     margin-bottom: 1000px;

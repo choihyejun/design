@@ -21,7 +21,7 @@
             모바일에서 메뉴를 열었을때 : menu_mo
             검색을 클릭했을때(pc/mobile 공통) : sch_open
         -->
-        <header class="menu_mo">
+        <header>
            <h1 class="logo"><a href="index.html">PETcare</a></h1>
            <nav class="gnb">
                 <button class="gnb_open">메뉴 열기</button>
@@ -33,14 +33,14 @@
                              li:hover로 구현하면 접근성 안맞음
                         -->
                         <li>
-                            <a href="#n"><span>찾습니다</span></a>
+                            <a href="https://www.naver.com/"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>실종신고</span></a></li>
                                 <li><a href="#n"><span>구조정보/목격담</span></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#n"><span>구조분양</span></a>
+                            <a href="https://www.naver.com/"><span>구조분양</span></a>
                         </li>
                         <li>
                             <a href="#n"><span>네트워크</span></a>
@@ -50,10 +50,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#n"><span>재회성공담</span></a>
+                            <a href="https://www.naver.com/"><span>재회성공담</span></a>
                         </li>
                         <li>
-                            <a href="#n"><span>대처방법</span></a>
+                            <a href="https://www.naver.com/"><span>대처방법</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>실종시 대처방법</span></a></li>
                                 <li><a href="#n"><span>구조시 대처방법</span></a></li>
@@ -124,6 +124,197 @@
                     <button class="next">다음 팝업 보기</button>
                     <button class="stop">팝업 일시정지</button>
                     <button class="play">팝업 다시 시작</button>
+                </div>
+            </section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class=tab_list>
+                        <ul>
+                            <!--tab하고 panal하고 연결고리가 있어야함 data-tab이 같으면 같은 내용
+                            선택된 tab에는 active 클래스 추가, button에는 title="선택됨" 추가..
+                            tab_panel에도 active 클래스 추가-->
+                            <li data-tab="tab01" role="tab" class="tab01 active"><button title="선택을">가족을</button></li>
+                            <li data-tab="tab02" role="tab" class="tab02"><button>주인을</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab_content">
+                        <div data-tab="tab01" role="tabpanal" class="tab_panal panal01 active">
+                            <h3>실종된 동물 찾기</h3>
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab01_01.jpg"></div>
+                                            <h4><strong class="cate01">실종</strong><span>골든 리트리버 수컷 15살 </span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2022-10-28</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 고양시 일산동구 지영동</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 잘 따르고 애교가 많아요 코가 얼룩져있고 코 옆에 점이 있고 목줄을 착용하고 있습니다</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab01_02.jpg"></div>
+                                            <h4><strong class="cate02">실종</strong><span>샴 암컷 5살</span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2024-3-6</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 안산시 상록구 안산시 상록</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>평소 방촌동 농업기술센터 인근 빌라에서 키우던 집고양이가 창문을 통해 농업기술센터 방향 밖으로 나갔고 집으로 돌아오지 않고 있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab01_03.jpg"></div>
+                                            <h4><strong class="cate03">실종</strong><span>토이 푸들 암컷 9살</span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2024-07-01</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경상남도 산청군 산청군 중산리 </span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>토이 푸들 오른쪽 뒷발 절어요.
+                                                        오른쪽 뒷발만 흰색 발톱</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab01_04.jpg"></div>
+                                            <h4><strong class="cate_and">완료</strong><span>코리아쇼트헤어 수컷 1살</span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2022-4-4</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>충청북도 청주시 흥덕구 청주</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>1살 정도이며 사람을 매우 좋아해.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div data-tab="tab02" role="tabpanal" class="tab_panal panal02">
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab02_01.jpg"></div>
+                                            <h4><strong class="cate01">실종</strong><span>골든 리트리버 수컷 15살 </span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2022-10-28</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 고양시 일산동구 지영동</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>사람을 잘 따르고 애교가 많아요 코가 얼룩져있고 코 옆에 점이 있고 목줄을 착용하고 있습니다</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab02_02.jpg"></div>
+                                            <h4><strong class="cate02">실종</strong><span>샴 암컷 5살</span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2024-3-6</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 안산시 상록구 안산시 상록</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>평소 방촌동 농업기술센터 인근 빌라에서 키우던 집고양이가 창문을 통해 농업기술센터 방향 밖으로 나갔고 집으로 돌아오지 않고 있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab02_03.jpg"></div>
+                                            <h4><strong class="cate03">실종</strong><span>토이 푸들 암컷 9살</span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2024-07-01</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경상남도 산청군 산청군 중산리 </span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>토이 푸들 오른쪽 뒷발 절어요.
+                                                        오른쪽 뒷발만 흰색 발톱</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/find_tab02_04.jpg"></div>
+                                            <h4><strong class="cate_and">완료</strong><span>코리아쇼트헤어 수컷 1살</span></h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2022-4-4</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>충청북도 청주시 흥덕구 청주</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>1살 정도이며 사람을 매우 좋아해.</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

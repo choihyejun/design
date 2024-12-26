@@ -72,8 +72,10 @@ $(document).ready(function(){
         /* 스크롤을 내린상태에서 마우스를 오버했다가 아웃하면 header에 클래스가 사라짐
             스크롤된 값이 0이거나 0보다 작을때만 삭제..*/
         if(scrolling <= 0){
-            $(this).removeClass('fixed')
-            console.log('마우스를 header에서 내렸을때')
+            if($('header').hasClass('sch_open') == false){ 
+                $(this).removeClass('fixed')
+            }
+            //console.log('마우스를 header에서 내렸을때')
         }
         
     })
@@ -83,13 +85,11 @@ $(document).ready(function(){
         //console.log(scrolling)
         if(scrolling > 0){//스크롤을 내렸을때
             $('header').addClass('fixed')
-        }else{//맨꼭대기
-            if($('header').hasClass('sch_open') == false){
-                if($('header').hasClass('menu_pc') == false){ //메뉴가 열린 상태가 아니라면..
-                    $('header').removeClass('fixed')
-                    //console.log('위로 스크롤 했을때')
-                }
-            }
+        }else if(($('header').hasClass('sch_open') == false) && ($('header').hasClass('menu_pc') == false)){//맨꼭대기
+            
+            $('header').removeClass('fixed')
+            //console.log('경우의 수2')
+            //console.log('위로 스크롤 했을때')
         }
     }
     scroll_chk() //함수의 실행 - 로딩된 후 1번
@@ -142,5 +142,83 @@ $(document).ready(function(){
 
     //***************** PC버전 메뉴 열기 종료 **********************/
 
+    //***************** 모바일버전 메뉴열기 시작 **********************/
+    // header .gnb .gnb_open 를 클릭하면 header에 menu_mo 클래스 추가
+    // header .gnb .gnb_close 를 클릭하면 header에 menu_mo 클래스 삭제
+
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_mo') 
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_mo')       
+    })
+
+    //***************** 모바일전 메뉴열기 종료 **********************/
+
+    //***************** 모바일버전 2차 메뉴열기 시작 **********************/
+    /*
+    li를 클릭할 거이냐..a를 클릭할 것이냐 => a를 클릭
+    =========> 2차 메뉴가 있는 1차 메뉴는 하위메뉴를 여는 기능을 갖음 (자기 자신의 href는 작동 X)
+    =========> 2차 메뉴를 가지고 있는 1차 메뉴인지 아닌지 구분
+    header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a
+    1차 메뉴 li에 oepn이라는 클래스를 추가
+
+    1. 클릭한 메뉴만 열리고 다른 메뉴는 모두 닫기
+    2. 이미 열려있는 메뉴를 다시 클릭하면 닫기
+    메뉴를 클릭했을때 이미 열린 메뉴 (나만 닫기) 또는 닫혀 메뉴 (나머지 다 닫고, 나만 열기)
+    **/
+    
+    $('header .gnb .gnb_wrap ul.depth1 > li:has(ul.depth2) > a').on('click', function(e){
+        if(device_status == 'mobile'){//모바일일때만
+            e.preventDefault(); //href를 작동 않게 막는 코드
+            if($(this).parent().hasClass('open') == false){
+                //열린 메뉴가 아닐 경우
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $(this).parent().addClass('open')
+            }else{
+                //열린 메뉴일 경우
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            } 
+        }        
+    })
+
+    //***************** 모바일버전 2차 메뉴열기 종료 **********************/
+
+    //***************** 찾습니다. 가족을 시작 **********************/
+    
+const find_panal01_swiper = new Swiper('.find .panal01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    breakpoints: {
+        1300: {    /* 1280px 이상일때 적용 */
+            slidesPerView: 4,
+            spaceBetween: 24,
+        },
+    },
+    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+const find_panal02_swiper = new Swiper('.find .panal02 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    breakpoints: {
+        1300: {    /* 1280px 이상일때 적용 */
+            slidesPerView: 4,
+            spaceBetween: 24,
+        },
+    },
+    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+    
+
+
+    //***************** 찾습니다. 가족을 종료 **********************/
 
 })//$(document).ready
