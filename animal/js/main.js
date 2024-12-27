@@ -43,7 +43,7 @@ $(document).ready(function(){
     //*********************** pc인지 mobile 구분 시작 *****************************//
     function device_chk(){
         window_w = $(window).width()
-        if(window_w > 640){
+        if(window_w > 1200){
             device_status = 'pc'
         }else{
             device_status = 'mobile'
@@ -188,13 +188,22 @@ $(document).ready(function(){
     //***************** 찾습니다. 가족을 시작 **********************/
     
 const find_panel01_swiper = new Swiper('.find .panel01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */ /**auto로 바꾸기..?? */
     spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
     breakpoints: {
-        641: {    /* 1280px 이상일때 적용 */
-            slidesPerView: 4,
+        321: {    
+            slidesPerView: 2,
             spaceBetween: 24,
         },
+        641: {     /* 1000 ~ 641px 이상일때 적용 */
+        slidesPerView: 3,
+        spaceBetween: 24,
+        },
+        1001: {    /* 1280px 이상일때 적용 */
+        slidesPerView: 4,
+        spaceBetween: 24,
+     },
+
     },
     loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
     navigation: {
@@ -206,10 +215,18 @@ const find_panel02_swiper = new Swiper('.find .panel02 .swiper', { /* 팝업을 
     slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
     spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
     breakpoints: {
-        1300: {    /* 1280px 이상일때 적용 */
-            slidesPerView: 4,
+        321: {    
+            slidesPerView: 2,
             spaceBetween: 24,
         },
+        641: {     /* 1000 ~ 641px 이상일때 적용 */
+        slidesPerView: 3,
+        spaceBetween: 24,
+        },
+        1001: {    /* 1280px 이상일때 적용 */
+        slidesPerView: 4,
+        spaceBetween: 24,
+     },
     },
     loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
     navigation: {
@@ -237,8 +254,55 @@ const find_panel02_swiper = new Swiper('.find .panel02 .swiper', { /* 팝업을 
         $('.find .tab_content .tab_panel').removeClass('active')
         $('.find .tab_content').find('[data-tab="'+tab_name+'"]').addClass('active')
     })
-
-
     /***************** 찾습니다. 가족을 탭 기능 종료  **********************/
+
+    /****************** 입양 swiper 팝업 시작 *******************/ 
+    const adopt_swiper = new Swiper('.adopt .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때  ?? auto일때*/
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+
+        breakpoints: {
+            350: {    /* 641px ~ 1000 이상일때 적용 */
+            slidesPerView: 2, /*갯수*/ 
+            spaceBetween: 24, /*사이여백*/
+        },
+            641: {    /* 641px ~ 1000 이상일때 적용 */
+                slidesPerView: 4, /*갯수*/ 
+                spaceBetween: 24, /*사이여백*/
+            },
+            1001: {    /* 1300~ 1001 이상일때 적용 */
+            slidesPerView: 5, /*갯수*/ 
+            spaceBetween: 24, /*사이여백*/
+             },
+            1301: {    /* 1301px 이상일때 적용 */
+            slidesPerView: 6, /*갯수*/ 
+            spaceBetween: 24, /*사이여백*/
+            },
+        },
+        centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        navigation: {
+            nextEl: '.adopt .btn_wrap .next',
+            prevEl: '.adopt .btn_wrap .prev',
+        }, 
+    });
+/****************** 입양 swiper 팝업 종료 *******************/ 
+
+const review_swiper = new Swiper('.review .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		641: {    /* 641px 이상일때 적용 */
+			slidesPerView: 3, /*PC에서 갯수*/
+			spaceBetween: 24, /*pc에서 여백*/
+		},
+        1001: {    /* 641px 이상일때 적용 */
+			slidesPerView: 4, /*PC에서 갯수*/
+			spaceBetween: 24, /*pc에서 여백*/
+		},
+	},
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+});
 
 })//$(document).ready
