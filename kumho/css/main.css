@@ -26,6 +26,16 @@
 .visual .swiper ul li .visual_txt {
     position: absolute;
     left: 0;
-    bottom: 216px;
-    
+    bottom: 3.6em;
+    /*em은 글자크기의 몇배인지 계산
+        글자크기가 50px bottom 180px이면
+        180/50 = 3.6em 
+        감싸는 요소나 나 자신에게 글자크기를 선언해야함
+        아무것도 주지않으면 기본 글자크기를 1em으로 계산
+        */
+        width: 100%;
+        font-size: 2.9412rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
 }
