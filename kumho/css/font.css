@@ -1,0 +1,46 @@
+/* 웹폰트 파일을 이용해서 웹폰트의 이름과 두께 등을 선언 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 900;
+	font-display: swap;
+	src: local('SCoreDream Black'), url(../fonts/SCoreDreamBlack.woff2) format('woff2'), url(../fonts/SCoreDreamBlack.woff) format('woff');
+}
+/* local 만약 당신의 컴퓨터에 서체가 깔려있다면 그걸 먼저 사용해라 뜻 정확한 번호는 눈누에서 확인*/
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 800;
+	font-display: swap;
+	src: local('SCoreDream Heavy'), url(../fonts/SCoreDreamHeavy.woff2) format('woff2'), url(../fonts/SCoreDreamHeavy.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url(../fonts/SCoreDreamExtraBold.woff2) format('woff2'), url(../fonts/SCoreDreamExtraBold.woff) format('woff');
+}
+/**/
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 600;
+	font-display: swap;
+	src: local('SCoreDream Bold'), url(../fonts/SCoreDreamBold.woff2) format('woff2'), url(../fonts/SCoreDreamBold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 500;
+	font-display: swap;
+	src: local('SCoreDream Medium'), url(../fonts/SCoreDreamMedium.woff2) format('woff2'), url(../fonts/SCoreDreamMedium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'SCoreDream';
+	font-weight: 400;
+	font-display: swap;
+	src: local('SCoreDream Regular'), url(../fonts/SCoreDreamRegular.woff2) format('woff2'), url(../fonts/SCoreDreamRegular.woff) format('woff');
+}
+
+
