@@ -17,7 +17,7 @@
 
 @font-face {
 	font-family: 'SCoreDream';
-	font-weight: 800;
+	font-weight: 700;
 	font-display: swap;
 	src: local('Pretendard ExtraBold'), url(../fonts/SCoreDreamExtraBold.woff2) format('woff2'), url(../fonts/SCoreDreamExtraBold.woff) format('woff');
 }
