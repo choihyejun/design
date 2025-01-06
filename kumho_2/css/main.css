@@ -538,6 +538,7 @@
 오버를 움직이는 요소 상위 요소로 설정 */
 .service .list ul li:hover a {
     transform: translate(-10px, -10px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2)
 }
 .service .list ul li a::before {
     content: "";
