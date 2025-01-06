@@ -34,24 +34,25 @@ body, html {
                         }
 }/*media*/
 
-
 :root {
     --base-font-size: 17px;
     --header-h: 100px;
+    --header-depth2-h: 300px;
+    --main-color: #ED1C24;
 }
 @media screen and (max-width:1300px){
     :root {
         --base-font-size: 16px;
     }
-}/*media*/
-@media screen and (max-width:1000px){
+}/* media */
+@media screen and (max-width:1000px){ 
     :root {
         --base-font-size: 15px;
     }
-}/*media*/
+}/* media */
 @media screen and (max-width:768px){ 
     :root {
         --base-font-size: 14px;
         --header-h: 56px;
     }
-}/*media*/
+}/* media */
