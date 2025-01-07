@@ -405,13 +405,28 @@
     object-fit: cover;
     transition: 0.5s;
 }
+/* a에 마우스를 오버했을때 */
+.news .list .swiper ul li a:hover::before {
+    /* width: 100%; */
+    animation-name: news_ani;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /* 마지막 유지 */
+}
+@keyframes news_ani {
+  0% {width: 0;}
+  100% {width: 100%;}
+}
+.news .list .swiper ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
 .news .list .ctrl_wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1.3529em 0 0 0;
 }
-/* a 마우스오버*/
 .news .list .swiper ul li a:hover::before {
     content: "";
     position: absolute;
@@ -422,22 +437,7 @@
     background-color: var(--main-color);
     transition: 2s;
 }
-.news .list .swiper ul li a:hover::before {
-    /*width: 100%;*/
-    animation-name: news_ani;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: ; /*?? 더추가..*/
-}
 
-@keyframes news_ani {
-    0% {width: 0;}
-    100% {width: 100%;}
-
-}
-.news .list .swiper ul li a:hover .photo img {
-    transform: rotate3d(1.2, 1.2, 1);
-}
 .news .list .ctrl_wrap .scroll {
     width: calc(100% - 10.5882em);
     height: 2px;
