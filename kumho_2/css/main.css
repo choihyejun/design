@@ -573,8 +573,6 @@
     text-overflow: ellipsis;*/
     color: #555555;
 }
-
-
 @media screen and (max-width:1000px){
                 .service {
                     margin: 8.5em 0 0 0;
@@ -584,7 +582,8 @@
                     font-size: 1.7857rem;
                 }
                 .service .list ul li a {
-                    padding: 1.0714em 1em 1.1429em 1em;
+                    padding: 4.2857em 1em 1.1429em 1em;
+                    text-align: center;
                 }
                 .service .list ul li a p {
                     display: none; /*숨김*/
@@ -602,6 +601,4 @@
                     line-height: 1.2;
                     text-align: center;
                 }
-            
-   
 }

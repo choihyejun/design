@@ -180,7 +180,38 @@ $(document).ready(function(){
 })
 
 /************  (종료) ****************/
-    
+/************ (시작) *****************/
+$('footer .top button').on('click', function(){
+    $('html, body').animate({
+        scrollTop: 0,
+    }, 500)
+
+})
+/************  (종료) ****************/
+/************ (시작) *****************/
+/*footer .family_site button 클릭했을때 
+* footer .family_site 에 open 클래스 추가
+* button에 title의 문구 변경
+* footer .family_site .list 열고 닫기 slideUp, slideDown
+* >> 현재 버튼이*/
+$('footer .family_site button').on('click', function(){
+    if($(this).parent().hasClass('open')==true){
+        //console.log('open 클래스 있음') 
+        $(this).parent().removeClass('open')
+        $(this).next().slideUp()
+        $(this).attr('title', '열기버튼')
+    }else{
+        //console.log('open 클래스 없음')  
+        $(this).parent().addClass('open')
+        $(this).next().slideDown()
+        $(this).attr('title', '닫기버튼')
+    }
+    console.log('클릭')
+})
+
+
+/************  (종료) ****************/
+
 
 })//$(document).ready
     
