@@ -4,7 +4,6 @@
 * 모든 페이지에서 공통으로 작동되는 스크립트
 */
 
-
 $(document).ready(function(){
     let scrolling = 0 //현재 스크롤 된값 
     let prev_scroll // 이전에 스크롤 된값 
@@ -95,47 +94,86 @@ $(document).ready(function(){
     */
     $('header .global').on('click', function(){
         if(device_status == 'pc'){
-            console.log('누름!!!!!!')
+            if($(this).hasClass('open') == true){ //열려있는 상태
+                //console.log('열렸어요!!')
+                $(this).removeClass('open')
+                $(this).find('button').attr('title', '언어선택 열기 버튼')
+            }else{
+                //console.log('닫혔어요!!!')
+                $(this).addClass('open')
+                $(this).find('button').attr('title', '언어선택 닫기 버튼')
+            }
         }
     })
     /************ 언어선택 열기 (종료) *****************/
-    
-    /************ 모바일의 2차 메뉴 열고 닫기 (시작) *****************
+
+    /************ 모바일의 2차 메뉴 열고 닫기 (시작) ****************
      * header .gnb .gnb_wrap ul.depth1 > li > a 를 클릭했을때
      * 1. 클릭이벤트를 삭제(페이지 이동 막기)
-     * 1차 메뉴 li에 open 클래스를 추가하거나 삭제..
+     * 1차 메뉴 li에 open 클래스를 추가하거나 삭제.. 
      * >> 열려있으면 닫고, 닫혀있으면 (다른애들을 모두 닫고 나만 열기)
-     */
+    */
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
         if(device_status == 'mobile'){
             e.preventDefault(); //a의 클릭 막기
-            if($(this).parent().hasClass('open')== true){ //open이 있으면
+            if($(this).parent().hasClass('open') == true){ //open이 있으면 (닫아야함)
                 $(this).parent().removeClass('open')
                 $(this).next().slideUp()
-                //console.log('open있어요!!열린애에요!!')
-            }else{
+                /*
+                    <a></a> ------------------------ $(this)
+                    <ul class="depth2"></ul> ------- $(this).next()로 선택가능
+                */
+            }else{ //open이 없으면 (열기)
                 $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li ul.depth2').slideUp()
                 $(this).parent().addClass('open')
-                //$(this).next().slideDown()
-                //console.log('open없어요!!닫힌애에요!!')
+                $(this).next().slideDown()
             }
-            ///console.log('클릭했어요!!!!!!!!!!')
         }
     })
     /************ 모바일의 2차 메뉴 열고 닫기 (종료) *****************/
-    /************ 모바일의 메뉴 열고 닫기 (시작) ****************
+    /************ 모바일의 메뉴 열고 닫기 (시작) ***************
      * header .gnb .gnb_open >> 클릭하면 열리고 header에 menu_mo 클래스 추가
      * header .gnb .gnb_close >> 클릭하면 닫힘 header에 menu_mo 클래스 삭제
     */
-   $('header .gnb .gnb_open').on('click', function(){
-    $('header').addClass('menu_mo')
-   })
-   $('header .gnb .gnb_close').on('click', function(){
-    $('header').removeClass('menu_mo')
-   })
 
-    /************ 모바일의 메뉴 열고 닫기 (종료) *****************/
-    
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_mo')
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_mo')
+    })
+
+    /************ 모바일의 메뉴 열고 닫기 (종료) ****************/
+    /************ top버튼을 클릭하면 상단으로 스크롤 (시작) ****************/
+    $('footer .top button').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 500)
+    })
+    /************ top버튼을 클릭하면 상단으로 스크롤 (종료) ****************/
+    /************ family site 클릭해서 열기 (시작) ***************
+     * footer .family_site button  클릭했을때
+     * footer .family_site 에 open 클래스 추가
+     * button에 title의 문구 변경
+     * footer .family_site .list 열고 닫기 slideUp slideDown
+     * >> 현재 버튼이 열려있는지 닫혀 있는지 구분 >> open클래스 존재 유무로
+    */
+    $('footer .family_site button').on('click', function(){
+        if($(this).parent().hasClass('open') == true){//open클래스가 있을때 (열렸을때 >> 닫는기능)
+            //console.log('open클래스 있음')
+            $(this).parent().removeClass('open')
+            $(this).next().slideUp()
+            $(this).attr('title', '열기버튼')
+        }else{ //open클래스가 없을때 (닫혔을때 >>> 여는기능)
+            //console.log('open클래스 없음')
+            $(this).parent().addClass('open')
+            $(this).next().slideDown()
+            $(this).attr('title', '닫기버튼')
+        }
+    })
+
+    /************ family site 클릭해서 열기 (종료) ****************/
 
 })//$(document).ready
     
