@@ -180,13 +180,13 @@ $(document).ready(function(){
      *  >>>> 스크롤 되는 중에는 동영사의 크기가 천천히 늘어 남 ..... 
      * 
      * >>> 스크롤 1000일때 고정 시작
-     *     스크롤 2000일때 고정 종료   ---  스크롤 1000동안 사이즈가 리사이즈됨
+     *     스크롤 2000일때 고정 종료   ---- 스크롤 1000동안 사이즈가 리사이즈됨
      * >>> 리사이즈 시작 값은 80
-     *     리사이즈 종료 값은 100  ---  20만 변경됨...
+     *     리사이즈 종료 값은 100 --- 20만 변경됨...
      * 
-     * >>> 예를 들어 내가 현재 스크롤 값이 1500임 ... 그럼 현재 넓이가 얼마 ...
-     *     vf_area_gap = 2000(vf_end) - 1000(vf_start)
-     *     vf_scroll_per =  1500(scrolling) - 1000(vf_start) = 500 / 1000(vf_area_gap) = 0.5
+     * >>> 예를들어 내가 현재 스크롤 값이 1500임 ... 그럼 현재 넓이가 얼마 ...
+     *     vf_area_gap = 2000(vf_end) - 1000(vf_start) = 1000
+     *     vf_scroll_per = 1500(scrolling) - 1000(vf_start) = 500 / 1000(vf_area_gap) = 0.5
      *     vf_resize_w = 100(vf_resize_end) - 80(vf_resize_start) = 20 * 0.5(vf_scroll_per) = 10 + 80(vf_resize_start) = 90
     */
 
@@ -196,13 +196,13 @@ $(document).ready(function(){
     let vf_resize_end = 100
     let vf_resize_w // 리사이즈 될때 계산한 넓이값
     let vf_area_gap // 리사이즈를 계산해야할 스크롤 구간값
-    let vf_scroll_per // 스크롤 된 값의 퍼센트
-    let vf_start // 영역을 고정하는 시작 지점
-    let vf_end // 영역 고정을 종료하는 종료 지점 
+    let vf_scroll_per //스크롤 된 값의 퍼센트
+    let vf_start //영역을 고정하는 시작 지점
+    let vf_end //영역 고정을 종료하는 종료 지점 
 
     function video_fixed(){
         vf_start = vf_area_name.offset().top
-        vf_end = vf_area_name.offset().top + vf_area_name.height() - window_h + (window_h*0.1)
+        vf_end = vf_area_name.offset().top + vf_area_name.height() - window_h 
         vf_area_gap = vf_end - vf_start
         //console.log('스크롤값', scrolling, '상단값', vf_start, '종료값', vf_end)
         if(scrolling < vf_start){
@@ -214,17 +214,17 @@ $(document).ready(function(){
             vf_scroll_per = (scrolling - vf_start) / vf_area_gap
             vf_resize_w = ((vf_resize_end - vf_resize_start) * vf_scroll_per) + vf_resize_start
             vf_resize_w = vf_resize_w * 1.05
-            if(vf_resize_w > vf_resize_end){ ///end값 이상 늘어나지 못하게 막음
+            if(vf_resize_w > vf_resize_end){ ///end값이상 늘어나지 못하게 막음
                 vf_resize_w = vf_resize_end
             }
         }else{
             vf_area_name.attr('data-status', 'after')
-            vf_resize_w = vf_resize_end 
-        }// if
+            vf_resize_w = vf_resize_end
+        }//if
         //console.log(vf_resize_w)
         vf_resize_name.width(vf_resize_w + '%')
         vf_resize_name.height(vf_resize_w + '%')
-    }// function
+    }//function
     video_fixed() //문서 로딩되었을때 1번 실행
     $(window).scroll(function(){//스크롤할때마다 실행
         video_fixed() 
@@ -235,10 +235,10 @@ $(document).ready(function(){
 
     /************************ 동영상 콘텐츠가 브라우저에 고정(확대) :: 종료 **********************/
 
-    /************************ 스크롤 시 콘텐츠 이동 :: 시작 **********************
-    * 시작 시점 .scroll_event .event_wrap이 화면에 나타나면
-    * .scroll_event .event_wrap .photo h2의 transform:translateY() 값을 조절해서 계속 위로 이동
-    * (현재 스크롤값 - 스크롤 시작값)에 일정 수를 곱해서 px로 줌...
+    /************************ 스크롤 시 콘텐츠 이동 :: 시작 *********************
+     * 시작 시점 .scroll_event .event_wrap이 화면에 나타나면
+     * .scroll_event .event_wrap h2의 transform:translateY() 값을 조절해서 계속 위로 이동
+     * (현재 스크롤값 - 스크롤 시작값)에 일정 수를 곱해서 px로 줌....
     */
     let ev_area_name = $('.scroll_event .event_wrap') //감싸는 영역이름
     let ev_area_start //이벤트가 시작하는 값
@@ -247,57 +247,89 @@ $(document).ready(function(){
 
     function scroll_event(){
         ev_area_start = ev_area_name.offset().top - window_h
-        //console.log('실행한다')
+        //console.log('스크롤값', scrolling, '시작값', ev_area_start)
         if(scrolling > ev_area_start){
-            //console.log('움직일꺼다..')
-            ev_move = (ev_area_start - scrolling) / (window_h * 250)
+            //console.log('움직일꺼다...')
+            ev_move = (ev_area_start - scrolling) / window_h * 250
         }else{
-            //console.log('0이다..')
+            //console.log('0이다....')
             ev_move = 0
         }//if종료
         //console.log(ev_move)
-        ev_move_name.css('transform', 'translateY('+ev_move+'px)')
+        ev_move_name.css('transform', 'translateY('+ ev_move +'px)')
     }//function 종료
     scroll_event() //문서가 로딩될때
     $(window).scroll(function(){ //스크롤될때마다
         scroll_event()
     })
-    $(window).resize(function(){ //리사이즈될때마다
+    $(window).resize(function(){ //리사이즈 될때마다
         scroll_event()
     })
 
     /************************ 스크롤 시 콘텐츠 이동 :: 종료 **********************/
 
-    /************************ slick 팝업  :: 시작 **********************/
+    /************************ slick 팝업 :: 시작 ********************
+     * 1개 (왼쪽)가 스타일이 다름 ..... 
+     * 
+    */
+
     $('.book .list .popup .popup_wrap').slick({
         autoplay: false, //팝업 자동 실행
-        autoplaySpeed: 3000, //팝업이 머무는 시간
-        speed: 500, //팝업 전환 속도
+        autoplaySpeed: 0, //팝업이 머무는 시간
+        speed: 0, //팝업 전환 속도
+        //cssEase: 'linear',
         dots: false, //하단 페이지 버튼 (true, false)
         arrows: true,  //다음, 이전팝업 (true, false)
-        //pauseOnHover: true, //마우스호버시 일시정지
+        pauseOnHover: true, //마우스호버시 일시정지
         infinite: true, //무한반복
         variableWidth: true, //넓이를 자유롭게 설정
-        //slidesToShow: 6, //한번에 보일 팝업 수
+        slidesToShow: 5, //한번에 보일 팝업 수
         //slidesToScroll: 1, //한번 드래그에 움직이는 슬라이드 제한
         swipeToSlide: true, //드래그한만큼 슬라이드 움직이기
-        //centerMode: true, //가운데정렬(가운데가 1번)
-        
+        centerMode: false, //가운데정렬(가운데가 1번)
     });
 
-    /************************ slick 팝업 :: 종료  **********************/
+    /************************ slick 팝업 :: 종료 **********************/
 
-    /************************ swiper 팝업 :: 시작  **********************/
+    /************************ swiper 팝업 :: 시작 **********************/
     const swiper = new Swiper('.best .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-    
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-   
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+        navigation: {
+            nextEl: '.best .list .btn_wrap .next',
+            prevEl: '.best .list .btn_wrap .prev',
+        },
     });
-    /************************ swiper 팝업 :: 종료  **********************/
+    swiper.on('slideChangeTransitionEnd', function () {
+        console.log('End')
+        swiper.slideReset
+        swiper.update()
+      });
+    swiper.on('slideChange', function () {
+        console.log('Change')
+        swiper.update()
+      });
+    /************************ swiper 팝업 :: 종료 **********************/
+
+    /************************ 마우스포인터 수정 :: 시작 **********************/
+    $(window).on('scroll mousemove', function(e){  /* html cursor가 마우스 포인터를 따라다니게 하는 값 */
+        $('.cursor').css('left', e.pageX + 'px');
+        $('.cursor').css('top', e.pageY + 'px');
+    });
+    //$('book a').hover(function(){ /* a에 마우스를 올렸을때만 on 클래스 주기 */
+        //$('.cursor').toggleClass('drag');
+    //});
+    //$('best a').hover(function(){ /* a에 마우스를 올렸을때만 on 클래스 주기 */
+    //$('.cursor').toggleClass('view');
+//});
+    $('.book a').on('mouseenter', function(){
+        $('.cursor').addClass('drag');
+    })
+    $('.book a').on('mouseleave', function(){
+        $('.cursor').removeClass('drag');
+    })
+	
+    /************************ 마우스포인터 수정 :: 종료 **********************/
 })
