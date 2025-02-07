@@ -1,0 +1,259 @@
+/*
+ * main.css
+ * 메인페이지에만 적용되는 스타일 입력,
+ * 다른 css import 
+ */
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css); 
+
+
+.visual {
+    position: relative; /* ctrl_wrap 정렬의 기준 */
+}
+.visual h2 {
+    display: none; /* 숨김 */
+}
+.visual .swiper ul li {
+    position: relative; /* .visual_txt 정렬의 기준 */
+}
+.visual .swiper ul li .photo {
+    overflow: hidden;
+    height: 1000px;
+}
+.visual .swiper ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper ul li .visual_txt {
+    position: absolute;
+    bottom: 544px;
+    left: 0;
+    /* em은 글자크기의 몇배인지 계산
+       글자크기가 50px bottom 180px이면 
+       180/50 = 3.6em 
+       감싸는 요소나 나 자신에게 글자크기를 선언해야함 
+       아무것도 주지 않으면 기본 글자크기를 1em으로 계산 */
+    width: 100%;
+    color: #fff;
+    line-height: 1.4;
+}
+.visual .swiper ul li .visual_txt h3 {
+    font-family: 'SUIT';
+    font-size:45px;
+    font-weight: 700;
+    padding-bottom: 0.4118em;
+}
+.visual .ctrl_wrap {
+    position: absolute; /* .visual으르 기준으로 정렬 */
+    left: calc(50% - 630px);
+    bottom: 480px;
+    z-index: 10;
+    font-size: 15px; /* html에 선언된 글자크기를 기준으로 계산 */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.visual .ctrl_wrap .paging {
+    font-size: 0;
+    line-height: 0; /* 숫자 중간에 /를 없애기 */
+    display: flex;
+}
+.visual .ctrl_wrap .paging span {
+    font-size: 15px;
+    line-height: 1;
+}
+.visual .ctrl_wrap .paging span.swiper-pagination-current {
+    font-weight: 700;
+    margin-right: 65px;
+    position: relative; /* before/after 정렬의 기준 */
+}
+.visual .ctrl_wrap .paging span.swiper-pagination-current::before {
+    content: "";
+    position: absolute; /* span태그를 기준으로 정렬 */
+    left: calc(100% + 3px);
+    top: 35%;
+    width: 58px;
+    height: 2px;
+    background-color: rgba(255,255,255,0.5);
+}
+.visual .ctrl_wrap .paging span.swiper-pagination-current::after {
+    content: "";
+    position: absolute; /* span태그를 기준으로 정렬 */
+    left: calc(100% + 0.2em);
+    top: 35%;
+    width: 0;
+    height: 2px;
+    background-color: #1D6EB0;
+    animation-name: paging_ani;
+    animation-duration: 5s; /* jquery에서 정한 팝업 시간과 같이 */
+    animation-timing-function: linear; /* 가속도X */
+    animation-iteration-count: infinite;
+}
+@keyframes paging_ani {
+    0% { width: 0; }
+    100% { width: 3.4em; }
+}/* keyframes */
+.visual .ctrl_wrap .paging span.swiper-pagination-total {
+    color: rgba(255,255,255,0.8);
+}
+.visual .ctrl_wrap button {
+    color: transparent; 
+    /* 글자크기를 0으로 잡으면 넓이가 0이 됨. 그래서 투명하게만 */
+    width: 21px;
+    height: 21px;
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .ctrl_wrap button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.visual .ctrl_wrap button.stop::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10.5' cy='10.5' r='10.5' fill='white' fill-opacity='0.2'/%3E%3Crect x='6.125' y='7.00002' width='2.8' height='7' fill='white'/%3E%3Crect x='11.7256' y='7.00002' width='2.8' height='7' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .ctrl_wrap button.play::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10.5' cy='10.5' r='10.5' fill='white' fill-opacity='0.2'/%3E%3Cpath d='M15.75 10.5L7.875 15.0466L7.875 5.95337L15.75 10.5Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .ctrl_wrap button.play {
+    display: none;
+}
+@media screen and (max-width:1280px){
+    .visual .ctrl_wrap {
+        left: 20px;
+    }
+}/* media */
+@media screen and (max-width:767px){
+    .visual .swiper ul li .photo {
+        height: 500px;
+    }
+    .visual .swiper ul li .visual_txt {
+        bottom: 105px;
+    }
+    .visual .swiper ul li .visual_txt h3 {
+        font-size: 34px;
+    }
+    .visual .ctrl_wrap {
+        bottom: 55px; /* 80px일때 15px을 기준으로 계산 */
+    }
+}/* media */
+
+/*제품소개*/
+.product {
+    margin: 49px 0 0 0;
+    color: #1d1d1d;
+}
+
+
+/*제품소개 탭*/
+.product .tit .wrapper {
+    position: relative;
+}
+.product .tit h2 {
+    font-family: 'SUIT';
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.product .tit .tab_list ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 49px 0 0 0 ;
+}
+.product .tit .tab_list ul li button {
+    padding: 14px 33px;
+    border-radius: 30px;
+    color: #1d1d1d;
+    border: 1px solid #8e8e8e;
+}
+.product .tit .tab_list ul li.active button {
+    border: 1px solid #1D6EB0;
+    background-color: #1D6EB0;
+    color: #fff;
+}
+
+.product .tit .ctrl_btn {
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    display: flex;
+}
+.product .tit .ctrl_btn button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #8E8E8E;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+}
+.product .tit .ctrl_btn button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.product .tit .ctrl_btn button.stop::before {
+    background-size: 11px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='18' viewBox='0 0 14 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.454102' y='0.272949' width='4.36364' height='17.4545' fill='%23555555'/%3E%3Crect x='9.18164' y='0.272888' width='4.36364' height='17.4545' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+.product .tit .ctrl_btn button.play {
+    display: none;
+}
+.product .tit .ctrl_btn button.play::before {
+    background-size: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.41739 10.0173L1.31251 2.40262C1.09875 2.2018 0.994652 1.96272 1.00021 1.6854C1.00577 1.40808 1.11543 1.16893 1.32918 0.967929C1.54294 0.767101 1.7974 0.666687 2.09257 0.666687C2.38774 0.666687 2.64229 0.767101 2.85623 0.967929L11.0935 8.72266C11.2878 8.90546 11.4319 9.11025 11.5257 9.33702C11.6197 9.56379 11.6667 9.79057 11.6667 10.0173C11.6667 10.2441 11.6197 10.4709 11.5257 10.6977C11.4319 10.9244 11.2878 11.1292 11.0935 11.312L2.83955 19.0668C2.6258 19.2676 2.37411 19.3654 2.0845 19.3602C1.79471 19.3549 1.54294 19.2519 1.32918 19.0511C1.11543 18.8503 1.00855 18.6112 1.00855 18.3339C1.00855 18.0566 1.11543 17.8174 1.32918 17.6164L9.41739 10.0173Z' fill='%23555555' stroke='%23555555' stroke-width='0.5'/%3E%3C/svg%3E%0A");
+}
+
+
+.product .list {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+    margin: 47px 0 0 0;
+}
+.product .list .swiper ul {
+    transition-timing-function: linear !important; 
+}
+.product .list .swiper ul li {
+    width: 616px;
+}
+
+@media screen and (max-width:1300px){
+    .product .list {
+        left: 20px;
+        width: calc(100% - 20px);
+    }
+}
+
+/*사업소개*/
+.biz {
+    padding: 7.5294em 0 0 0;
+    color: #1d1d1d;
+}
+.biz h2 {
+    font-family: 'SUIT';
+    font-size: 2.6471rem;
+    font-weight: 700;
+    text-align: center;
+}
+.biz_list ul {
+    display: inline-block;    
+
+}
+ 
