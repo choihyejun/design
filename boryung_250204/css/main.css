@@ -149,11 +149,9 @@
 
 /*제품소개*/
 .product {
-    margin: 49px 0 0 0;
+    margin: 124px 0 0 0;
     color: #1d1d1d;
 }
-
-
 /*제품소개 탭*/
 .product .tit .wrapper {
     position: relative;
@@ -164,7 +162,6 @@
     font-weight: 700;
     text-align: center;
 }
-
 .product .tit .tab_list ul {
     display: flex;
     justify-content: center;
@@ -172,7 +169,7 @@
     margin: 49px 0 0 0 ;
 }
 .product .tit .tab_list ul li button {
-    padding: 14px 33px;
+    padding: 14px 30px;
     border-radius: 30px;
     color: #1d1d1d;
     border: 1px solid #8e8e8e;
@@ -182,11 +179,10 @@
     background-color: #1D6EB0;
     color: #fff;
 }
-
 .product .tit .ctrl_btn {
     position: absolute;
     right: 0;
-    bottom: 7px;
+    bottom: 6px;
     display: flex;
 }
 .product .tit .ctrl_btn button {
@@ -219,8 +215,6 @@
     background-size: 10px;
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.41739 10.0173L1.31251 2.40262C1.09875 2.2018 0.994652 1.96272 1.00021 1.6854C1.00577 1.40808 1.11543 1.16893 1.32918 0.967929C1.54294 0.767101 1.7974 0.666687 2.09257 0.666687C2.38774 0.666687 2.64229 0.767101 2.85623 0.967929L11.0935 8.72266C11.2878 8.90546 11.4319 9.11025 11.5257 9.33702C11.6197 9.56379 11.6667 9.79057 11.6667 10.0173C11.6667 10.2441 11.6197 10.4709 11.5257 10.6977C11.4319 10.9244 11.2878 11.1292 11.0935 11.312L2.83955 19.0668C2.6258 19.2676 2.37411 19.3654 2.0845 19.3602C1.79471 19.3549 1.54294 19.2519 1.32918 19.0511C1.11543 18.8503 1.00855 18.6112 1.00855 18.3339C1.00855 18.0566 1.11543 17.8174 1.32918 17.6164L9.41739 10.0173Z' fill='%23555555' stroke='%23555555' stroke-width='0.5'/%3E%3C/svg%3E%0A");
 }
-
-
 .product .list {
     position: relative;
     left: calc(50% - 630px);
@@ -233,27 +227,285 @@
 .product .list .swiper ul li {
     width: 616px;
 }
-
+.product .list .swiper ul li a {
+    display: block;
+}
+.product .list .swiper ul li .photo {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 312px;
+}
+.product .list .swiper ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product .list .swiper ul li .txt {
+    margin-top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product .list .swiper ul li .txt span {
+    font-size: 15px;
+    color: #1D6EB0;
+    border: 1px solid #1D6EB0;
+    border-radius: 30px;
+    padding: 6px 12px;
+    margin-right: 5px;
+}
 @media screen and (max-width:1300px){
     .product .list {
         left: 20px;
         width: calc(100% - 20px);
     }
-}
+}/*@media*/
+@media screen and (max-width:767px){
+    .product {
+        margin: 60px 0 0 0; 
+    }
+    .product .tit h2 {
+        text-align: left;
+        font-size: 26px;
+    }
+    .product .tit .tab_list {
+        display: none;
+    }
+    .product .tit .ctrl_btn {
+        bottom: 0;
+    }
+    .product .tit .ctrl_btn button {
+        width: 36px;
+        height: 36px;
+    }
+    .product .list {
+        margin: 26px 0 0 0;
+    }
+    .product .list .swiper ul li {
+        width: 267px;
+    }
+    .product .list .swiper ul li .photo {
+        height: 175px;
+    }
+    .product .list .swiper ul li .txt {
+        margin-top: 10px;
+    }
+    .product .list .swiper ul li .txt span {
+        font-size: 13px;
+    }
+}/*@media*/
 
 /*사업소개*/
 .biz {
-    padding: 7.5294em 0 0 0;
+    margin: 124px 0 0 0;
     color: #1d1d1d;
 }
 .biz h2 {
     font-family: 'SUIT';
-    font-size: 2.6471rem;
+    font-size: 45px;
     font-weight: 700;
     text-align: center;
 }
-.biz_list ul {
-    display: inline-block;    
-
+.biz .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 47px 0 0 0;
 }
- 
+.biz .list ul li {
+    border-radius: 10px;
+    color: #fff;
+    height: 456px;
+}
+.biz .list ul li.biz1 {
+   width: 50%;
+   background-image: url(../images/main/biz01.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.biz .list ul li.biz2 {
+    width: 25%;
+    background-image: url(../images/main/biz02.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+ }
+ .biz .list ul li.biz3 {
+    width: 25%;
+    background-image: url(../images/main/biz03.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+ .biz .list .biz_txt {
+    padding: 43px 22px;
+    font-size: 18px;
+ }
+ .biz .list .biz_txt p {
+    font-size: 16px;
+ }
+ .biz .list .biz_txt h3 {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 21px 0px;
+ }
+ .biz .list ul li.biz1 h3 {
+    font-size: 37px;
+    font-weight: 700;
+ }
+ .biz .list ul li a {
+    margin: 34px 0 0 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+}
+.biz .list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928932C6.95262 0.538408 6.31946 0.538408 5.92893 0.928932C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM0 9L13 9V7L0 7L0 9Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media screen and (max-width:767px){
+    .biz {
+        margin: 65px 0 0 0;
+    }
+    .biz h2 {
+        text-align: left;
+        font-size: 26px;
+    }
+    .biz .list ul {
+        margin: 26px 0 0 0;
+    }
+    .biz .list ul {
+        display: block;
+    }
+    .biz .list ul li {
+        background-size: cover;
+    }
+    .biz .list ul li.biz1, .biz .list ul li.biz2, .biz .list ul li.biz3 {
+        width: 100%;
+        height: auto;
+    }
+    .biz .list .biz_txt {
+        padding: 84px 0px 19px 17px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .biz .list .biz_txt h3 {
+        font-size: 22px;
+        padding: 16px 0 0 0 ;
+    }
+    .biz .list ul li.biz1 h3 {
+        font-size: 22px;
+        padding: 16px 0 0 0 ;
+    }
+    .biz .list .biz_txt p {
+        display: none;
+    }
+}/*@media*/
+/*광고영상*/
+.media {
+    margin: 124px 0 1000px 0;
+    color: #1d1d1d;
+    background-color: #F0F2F4;
+}
+.media h2 {
+    font-family: 'SUIT';
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+.media .wrapper {
+    padding: 113px 0 109px 0;
+}
+.media .list ul {
+    display: flex;
+    margin: 47px 0 0 0;
+    justify-content: space-between;
+} 
+.media .list ul li {
+    width: calc(33.33% - 30px);
+    background-color: #fff;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+.media .list ul li a {
+    display: block;
+}
+.media .list ul li .photo {
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: auto;
+}
+.media .list ul li .photo img {
+    width: 100%;
+    height: 100%;
+}
+.media .list ul li .txt {
+    padding: 18px 23px 37px 23px;
+}
+.media .list ul li .txt strong {
+    font-size: 22px;
+    font-weight: 700;
+}
+.media .list ul li .txt p {
+    color: #555;
+    padding-top: 10px;
+}
+.media .more {
+    margin: 24px;
+    text-align: center;
+}
+.media .more a {
+    display: inline-block;
+    padding: 15px 46px 13px 21px;
+    text-align: center;
+    border: 1px solid #1D6EB0;
+    border-radius: 30px;
+    background: #fff;
+    color: #1D6EB0;
+    position: relative;
+}
+.media .more a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -49px;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM-8.74228e-08 9L13 9L13 7L8.74228e-08 7L-8.74228e-08 9Z' fill='%231D6EB0'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.media .more a:hover {
+    background: #1D6EB0;
+    color: #fff;
+}
+.media .more a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928933C6.95262 0.538408 6.31946 0.538408 5.92893 0.928933C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM-8.74228e-08 9L13 9L13 7L8.74228e-08 7L-8.74228e-08 9Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:767px){
+    .media { 
+        margin: 65px 0 0 0;
+    }
+    .media .wrapper {
+        padding: 65px 0;
+    }
+    .media h2 {
+        text-align: left;
+        font-size: 26px;
+    }
+    .media .list ul {
+
+    }
+}/*@media*/
