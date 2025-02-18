@@ -32,7 +32,7 @@ header .logo a::before {
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(../images/common/logo.svg) no-repeat center center / contain;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
 }
 @media screen and (min-width:1281px){ /* 1281x 이상일때만 적용 */
     header .gnb .gnb_wrap ul.depth1 {
@@ -153,5 +153,137 @@ header .logo a::before {
     header .logo a::before {
        width: 95px;
     }
+}/*@media*/
 
+footer {
+    padding: 65px 0 30px 0;
+    color: #555555;
+}
+footer h2 {
+    display: none;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+footer .f_cont .f_info {
+    display: flex;
+    align-items: flex-start; /*정렬*/
+    gap: 127px;
+    padding: 38px 0 0 0;
+}
+footer .f_cont .f_logo img {
+    width: 160px;
+}
+footer .f_cont .f_info strong {
+    position: relative;
+    padding-right: 15px;
+}
+footer .f_cont .f_info strong::after {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    width: 1px;
+    height: 11px;
+    background-color: #ccc;
+}
+footer .f_cont .copyright {
+    padding: 26px 0 0 0;
+    color: #8E8E8E;
+    font-size: 12px;
+}
+footer .f_site {
+    display: flex;
+    align-items: flex-start; /*정렬*/
+    gap: 10px;
+    font-size: 15px;
+}
+footer .f_site .family, 
+footer .f_site .brand {
+    position: relative;
+}
+footer .f_site .family button,
+footer .f_site .brand button {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 11px 65px 11px 20px;
+    position: relative;
+}
+footer .f_site .family button::after,
+footer .f_site .brand button::after {
+    content: "";
+    position: absolute; /* button을 기준으로 정렬 */
+    width: 10px;
+    height: 20px;
+    top: 12px;
+    right: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00415 1.98661L1.93115 6.05986C1.79265 6.19819 1.61856 6.26903 1.4089 6.27236C1.1994 6.27553 1.02215 6.20469 0.877148 6.05986C0.732314 5.91486 0.659897 5.73919 0.659897 5.53286C0.659897 5.32653 0.732314 5.15086 0.877148 5.00586L5.3714 0.511609C5.46506 0.418109 5.56381 0.352109 5.66765 0.313609C5.77148 0.275109 5.88365 0.255859 6.00415 0.255859C6.12465 0.255859 6.23681 0.275109 6.34065 0.313609C6.44448 0.352109 6.54323 0.418109 6.6369 0.511609L11.1311 5.00586C11.2695 5.14436 11.3403 5.31844 11.3436 5.52811C11.3468 5.73761 11.276 5.91486 11.1311 6.05986C10.9861 6.20469 10.8105 6.27711 10.6041 6.27711C10.3978 6.27711 10.2221 6.20469 10.0771 6.05986L6.00415 1.98661Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+footer .f_site .family button.site_close,
+footer .f_site .brand button.site_close {
+    display: none;
+}
+footer .f_site .family button.site_close::after,
+footer .f_site .brand button.site_close::after {
+    transform: rotate(180deg);
+}
+footer .f_site .family .list, 
+footer .f_site .brand .list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 46px;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: #fff;
+    margin-top: 1px;
+    line-height: 1.4;
+}
+footer .f_site .family.open button.site_open,
+footer .f_site .brand.open button.site_open {
+    display: none;
+}
+footer .f_site .family.open button.site_close,
+footer .f_site .brand.open button.site_close {
+    display: block;
+}
+footer .f_site .family.open .list, 
+footer .f_site .brand.open .list {
+    display: block;
+}
+@media screen and (max-width:890px){ /* 890px부터 적용 */
+    footer {
+        padding: 50px 0 30px 0;
+    }
+    footer .wrapper {
+        display: block;
+    }
+    footer .f_cont .f_info {
+        display: block;
+        padding: 20px 0 0 0;
+    }
+    footer .f_cont .copyright {
+        padding: 10px 0 0 0; 
+    }
+    footer .f_site {
+        display: block;
+        padding: 25px 0 0 0;
+    }
+    footer .f_site .family button, 
+    footer .f_site .brand button {
+        width: 100%;
+        margin: 10px 0 0 0;
+        padding: 7px 20px;
+        text-align: left;
+    }
+    footer .f_site .family button::after, 
+    footer .f_site .brand button::after {
+        top: 8px
+    }
+    
 }/*@media*/

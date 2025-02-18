@@ -1,0 +1,150 @@
+/*
+ * main.css
+ * 메인페이지에만 적용되는 스타일 입력,
+ * 다른 css import 
+ */
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css); 
+
+.visual {
+    position: relative; 
+}
+.visual h2 {
+    display: none; 
+}
+.visual .swiper ul li {
+    height: 940px;
+}
+.visual .swiper ul li .photo {
+    position: absolute; 
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper ul li .txt {
+    margin: 250px 0 0 0;
+    color: #fff;
+}
+.visual .swiper ul li .txt h3 {  
+    font-size: 82px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.visual .swiper ul li .txt .more {
+    position: relative;
+    margin-top: 50px;
+}
+.visual .swiper ul li .txt .more a {
+    display: block;
+    font-size: 18px;
+    padding-left: 80px;
+    line-height: 58px;
+}
+.visual .swiper ul li .txt .more a::after { 
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #fff;
+    border-radius: 50%; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.52391 6.00245L0.205083 1.11435C0.0648054 0.985429 -0.00350944 0.831961 0.000138707 0.653943C0.00378686 0.475924 0.0757498 0.322402 0.216027 0.193376C0.356304 0.0644585 0.523296 0 0.717001 0C0.910706 0 1.07776 0.0644585 1.21815 0.193376L6.62383 5.17136C6.7514 5.2887 6.84595 5.42016 6.9075 5.56573C6.96917 5.7113 7 5.85688 7 6.00245C7 6.14802 6.96917 6.2936 6.9075 6.43917C6.84595 6.58474 6.7514 6.7162 6.62383 6.83355L1.20721 11.8115C1.06693 11.9404 0.901762 12.0032 0.711705 11.9999C0.52153 11.9965 0.356304 11.9304 0.216027 11.8015C0.0757498 11.6726 0.00561089 11.5191 0.00561089 11.3411C0.00561089 11.163 0.0757498 11.0095 0.216027 10.8805L5.52391 6.00245Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .paging {
+    position: absolute;
+    left: 0;
+    bottom: 63px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+.visual .paging .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #E8E8E8;
+}
+.visual .paging .swiper-pagination-bullet-active {
+    background-color: #D80E19;
+}
+@media screen and (max-width:1740px){ 
+    .visual .swiper ul li {
+        height: 615px;
+    }
+    .visual .swiper ul li .txt {
+        margin: 220px 0px 0 0px;
+    }
+    .visual .swiper ul li .txt h3 {  
+        font-size: 60px;
+        line-height: 1.3;
+    }
+    .visual .swiper ul li .txt .more {
+        margin-top: 40px;
+    }
+    .visual .swiper ul li .txt .more a {
+        font-size: 17px;
+    }
+    .visual .paging {
+        bottom: 53px;
+    }
+}/* media */
+@media screen and (max-width:1260px){ 
+    .visual .swiper ul li {
+        height: 500px;
+    }
+    .visual .swiper ul li .txt h3 {  
+        font-size: 48px;
+        line-height: 1.2;
+    }
+    .visual .swiper ul li .txt .more a {
+        padding-left: 70px;
+        line-height: 50px;
+    }
+    .visual .swiper ul li .txt .more a::after {
+        width: 50px;
+        height: 50px;
+    }
+    .visual .paging {
+        bottom: 27px;
+    }
+}/* media */
+@media screen and (max-width:1024px){ 
+    .visual .swiper ul li .txt h3 {  
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width:760px){ 
+    .visual .swiper ul li {
+        height: 321px;
+    }
+    .visual .swiper ul li .txt {
+        margin: 120px 0px 0 0px;
+    }
+    .visual .swiper ul li .txt h3 {  
+        font-size: 24px;
+    }
+    .visual .swiper ul li .txt .more a {
+        padding-left: 50px;
+        line-height: 38px;
+    }
+    .visual .swiper ul li .txt .more a::after {
+        width: 38px;
+        height: 38px;
+    }
+    .visual .paging {
+        bottom: 34px;
+    }
+}/* media */

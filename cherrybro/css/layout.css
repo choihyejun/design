@@ -1,0 +1,120 @@
+/*
+ * layout.css
+ * header/footer 모든 페이지의 공통 스타일 적용
+*/
+
+header {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 120px;
+    padding: 0 0 0 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+header .logo a {
+    display: block;
+    margin: 40px 0;
+}
+header .logo a img {
+    width: 164px;
+    height: 41px;
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+}
+header .gnb .gnb_wrap ul li {
+    width: 115px;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    line-height: 120px;
+    text-align: center;
+}
+header .gnb .gnb_wrap ul li ul {
+    display: none;
+}
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb_open {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    font-size: 0;
+    line-height: 0;
+    /*color: transparent;*/
+} 
+header .gnb_open::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='24' viewBox='0 0 30 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.66667 23.8638C1.19444 23.8638 0.798611 23.7114 0.479167 23.4064C0.159722 23.1015 0 22.7237 0 22.2729C0 21.8222 0.159722 21.4443 0.479167 21.1394C0.798611 20.8345 1.19444 20.682 1.66667 20.682H28.3333C28.8056 20.682 29.2014 20.8345 29.5208 21.1394C29.8403 21.4443 30 21.8222 30 22.2729C30 22.7237 29.8403 23.1015 29.5208 23.4064C29.2014 23.7114 28.8056 23.8638 28.3333 23.8638H1.66667ZM1.66667 13.0456C1.19444 13.0456 0.798611 12.8931 0.479167 12.5882C0.159722 12.2832 0 11.9054 0 11.4546C0 11.0039 0.159722 10.626 0.479167 10.3211C0.798611 10.0162 1.19444 9.86372 1.66667 9.86372H28.3333C28.8056 9.86372 29.2014 10.0162 29.5208 10.3211C29.8403 10.626 30 11.0039 30 11.4546C30 11.9054 29.8403 12.2832 29.5208 12.5882C29.2014 12.8931 28.8056 13.0456 28.3333 13.0456H1.66667ZM1.66667 3.18184C1.19444 3.18184 0.798611 3.02938 0.479167 2.72445C0.159722 2.41953 0 2.04168 0 1.59092C0 1.14016 0.159722 0.762317 0.479167 0.45739C0.798611 0.152463 1.19444 0 1.66667 0H28.3333C28.8056 0 29.2014 0.152463 29.5208 0.45739C29.8403 0.762317 30 1.14016 30 1.59092C30 2.04168 29.8403 2.41953 29.5208 2.72445C29.2014 3.02938 28.8056 3.18184 28.3333 3.18184H1.66667Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@media screen and (max-width:1740px){ 
+    header .gnb .gnb_wrap ul li a {
+        font-size: 15px;
+    }
+}/* media */
+@media screen and (max-width:1260px){ 
+    header {
+        height: 96px;
+    }
+    header .logo a {
+        margin: 26px 0 0 0;
+    }
+    header .gnb .gnb_wrap ul {
+        display: none;
+    }
+    header .gnb_open {
+        width: 96px;
+        height: 96px;
+    }
+}/* media */
+@media screen and (max-width:1024px){ 
+    header {
+        height: 80px;
+    }
+    header .logo a {
+        margin: 22px 0 0 0;
+    }
+    header .gnb_open {
+        width: 80px;
+        height: 80px;
+    }
+    header .gnb_open::before {
+        background-size: 25px;
+    }
+}/* media */
+@media screen and (max-width:760px){ 
+    header {
+        height: 67px;
+    }
+    header .logo a {
+        margin: 19px 0 0 0;
+    }
+    header .logo a img {
+        width: 112px;
+        height: 28px;
+    }
+    
+    header .gnb_open {
+        width: 67px;
+        height: 67px;
+    }
+    header .gnb_open::before {
+        background-size: 22px;
+    }
+}/* media */
+
+
+
