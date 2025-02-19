@@ -8,7 +8,7 @@ body, html {
     font-size: 17px;
     font-weight: 400;
     color: #555;
-    line-height: 1.4; /* 배수 - 글자크기에 몇배 */
+    line-height: 1.3; /* 배수 - 글자크기에 몇배 */
     word-break: keep-all; /* 단어별로(여백기준) 줄바꿈 */
     word-wrap: break-word; /* 단어가 너무 길면 그걸 강제로 줄바꿈 하는 명령 */
 }
@@ -46,11 +46,3 @@ body, html {
   
 }/* media */
 
-::selection {
-    background-color: var(--main-color) ;
-    color: #fff;
-}
-::-moz-selection {
-    background-color: var(--main-color) ;
-    color: #fff;
-}
