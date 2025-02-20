@@ -11,219 +11,311 @@
     <title>체리부로</title>
 </head>
 <body>
-    <header>
-        <h1 class="logo"><a href="#n"><img src="images/common/logo.svg" alt="체리부로logo"></a></h1>
-        <nav class="gnb">
-            <div class="gnb_wrap">
-                <ul class="depth1">
-                    <li>
-                        <a href="#n">체리부로소개</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                    <li>
-                        <a href="#n">사업소개</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                    <li>
-                        <a href="#n">브랜드</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                    <li>
-                        <a href="#n">제품소개</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                    <li>
-                        <a href="#n">홍보</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                    <li>
-                        <a href="#n">고객센터</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                    <li>
-                        <a href="#n">ESG 경영</a>
-                        <ul class="depth2"></ul>
-                    </li>
-                </ul>
-            </div>
-            <button class="gnb_close">메뉴닫기</button>
-        </nav>
-            <button class="gnb_open">메뉴열기</button>
-    </header>
-    <main class="container">
-        <section class="visual">
-            <h2>팝업</h2>
-            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
-                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
-                    <li class="swiper-slide">
-                        <div class="photo"><img src="images/main/visual01.jpg"></div> 
-                        <div class="txt">
-                            <div class="wrapper">
-                                <h3>닭고기가 체리부로와<br>함께 싱싱해집니다</h3>
-                                <div class="more">
-                                    <a href="#n">체리부로 비즈니스</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
-                    <li class="swiper-slide">
-                        <div class="photo"><img src="images/main/visual02.jpg"></div>        
-                        <div class="txt">
-                            <div class="wrapper">
-                                <h3>더 깨끗하고<br>
-                                    안전한 먹거리를 만듭니다</h3>
-                                <div class="more">
-                                    <a href="#n">체리부로 경영철학</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
-                    <li class="swiper-slide">
-                        <div class="photo"><img src="images/main/visual03.jpg"></div> 
-                        <div class="txt">
-                            <div class="wrapper">
-                                <h3>농장에서 유통까지<br>
-                                    정직하게 만든 안전한 먹거리</h3>
-                                <div class="more">
-                                    <a href="#n">체리부로 제품투어</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->  
-                </ul>
-            </div>
-            <div class="paging"></div>
-        </section>
-        <section class="philosophy">
-            <div class="wrapper">
-                <div class="inner">
-                    <div class="txt">
-                        <strong>Food Business</strong> 
-                        <h2>건강하고 올바른 식생활 정착,<br>
-                            <em>고객과 함께하는 식생활 문화 기업</em>
-                        </h2>
-                    </div>
-                    <div class="more"><a href="#n">체리부로 경영철학</a></div>
-                </div>
-                <div class="photo"><img src="images/main/philosophy01.jpg" alt=""></div>
-            </div>
-        </section>
-        <section class="business">
-            <div class="wrapper">
-                <div class="tit">
-                    <strong>Food Business</strong> 
-                    <h2>농장에서 판매까지 전 단계<br>
-                        <em>HACCP 인증</em> 받은 제품을 공급합니다
-                    </h2>
-                </div>
-                <div class="list">
-                    <ul>
-                        <li class="icon1">
-                            <a href="#">
-                                <h3>원종</h3>
-                                <div class="box">
-                                    <div class="icon_wrap">
-                                        <span class="icon">아이콘</span>
-                                        <span class="plus">플러스</span>
-                                    </div>
-                                    <div class="txt">
-                                        <strong>원종</strong>
-                                        <span>가장 우수한 품종 ‘아바 에이커 플러스’</span>
-                                    </div>
-                                </div>
-                            </a>
+    <div id="wrap">
+        <header>
+            <h1 class="logo"><a href="#n"><img src="images/common/logo.svg" alt="체리부로logo"></a></h1>
+            <nav class="gnb">
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n">체리부로소개</a>
+                            <ul class="depth2"></ul>
                         </li>
-                        <li class="icon2">
-                            <a href="#">
-                                <h3>부화</h3>
-                                <div class="box">
-                                    <div class="icon_wrap">
-                                        <span class="icon">아이콘</span>
-                                        <span class="plus">플러스</span>
-                                    </div>
-                                    <div class="txt">
-                                        <strong>부화</strong>
-                                        <span>이노보젝터 등의 
-                                            첨단 설비 운영, 
-                                            오염 차단 방역체제</span>
-                                    </div>
-                                </div>
-                            </a>
+                        <li>
+                            <a href="#n">사업소개</a>
+                            <ul class="depth2"></ul>
                         </li>
-                        <li class="icon3">
-                            <a href="#">
-                                <h3>사료</h3>
-                                <div class="box">
-                                    <div class="icon_wrap">
-                                        <span class="icon">아이콘</span>
-                                        <span class="plus">플러스</span>
-                                    </div>
-                                    <div class="txt">
-                                        <strong>사료</strong>
-                                        <span>원종계·종계·육계 
-                                            전문 사료, 
-                                            친환경 HACCP 인증  
-                                            </span>
-                                    </div>
-                                </div>
-                            </a>
+                        <li>
+                            <a href="#n">브랜드</a>
+                            <ul class="depth2"></ul>
                         </li>
-                        <li class="icon4">
-                            <a href="#">
-                                <h3>종계</h3>
-                                <div class="box">
-                                    <div class="icon_wrap">
-                                        <span class="icon">아이콘</span>
-                                        <span class="plus">플러스</span>
-                                    </div>
-                                    <div class="txt">
-                                        <strong>종계</strong>
-                                        <span>최신 급수, 환기 
-                                            자동조절 시스템, 
-                                            난방 시스템과 방역 체계</span>
-                                    </div>
-                                </div>
-                            </a>
+                        <li>
+                            <a href="#n">제품소개</a>
+                            <ul class="depth2"></ul>
                         </li>
-                        <li class="icon5">
-                            <a href="#">
-                                <h3>생산</h3>
-                                <div class="box">
-                                    <div class="icon_wrap">
-                                        <span class="icon">아이콘</span>
-                                        <span class="plus">플러스</span>
-                                    </div>
-                                    <div class="txt">
-                                        <strong>생산</strong>
-                                        <span>HACCP 인증 도계장, 
-                                            QGS, 에어칠링 시스템 
-                                            등 첨단 설비
-                                            </span>
-                                    </div>
-                                </div>
-                            </a>
+                        <li>
+                            <a href="#n">홍보</a>
+                            <ul class="depth2"></ul>
                         </li>
-                        <li class="icon6">
-                            <a href="#">
-                                <h3>제품</h3>
-                                <div class="box">
-                                    <div class="icon_wrap">
-                                        <span class="icon">아이콘</span>
-                                        <span class="plus">플러스</span>
-                                    </div>
-                                    <div class="txt">
-                                        <strong>제품</strong>
-                                        <span>실시간 위치기반 
-                                            콜드체인 시스템
-                                            </span>
-                                    </div>
-                                </div>
-                            </a>
+                        <li>
+                            <a href="#n">고객센터</a>
+                            <ul class="depth2"></ul>
+                        </li>
+                        <li>
+                            <a href="#n">ESG 경영</a>
+                            <ul class="depth2"></ul>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </section>
-    </main>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+                <button class="gnb_open">메뉴열기</button>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2>팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual01.jpg"></div> 
+                            <div class="txt">
+                                <div class="wrapper">
+                                    <h3>닭고기가 체리부로와<br>함께 싱싱해집니다</h3>
+                                    <div class="more">
+                                        <a href="#n">체리부로 비즈니스</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual02.jpg"></div>        
+                            <div class="txt">
+                                <div class="wrapper">
+                                    <h3>더 깨끗하고<br>
+                                        안전한 먹거리를 만듭니다</h3>
+                                    <div class="more">
+                                        <a href="#n">체리부로 경영철학</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual03.jpg"></div> 
+                            <div class="txt">
+                                <div class="wrapper">
+                                    <h3>농장에서 유통까지<br>
+                                        정직하게 만든 안전한 먹거리</h3>
+                                    <div class="more">
+                                        <a href="#n">체리부로 제품투어</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->  
+                    </ul>
+                </div>
+                <div class="paging"></div>
+            </section>
+            <section class="philosophy">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="txt">
+                            <strong>Food Business</strong> 
+                            <h2>건강하고 올바른 식생활 정착,<br>
+                                <em>고객과 함께하는 식생활 문화 기업</em>
+                            </h2>
+                        </div>
+                        <div class="more"><a href="#n">체리부로 경영철학</a></div>
+                    </div>
+                    <div class="photo"><img src="images/main/philosophy01.jpg" alt="주방"></div>
+                </div>
+            </section>
+            <section class="business">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>Food Business</strong> 
+                        <h2>농장에서 판매까지 전 단계<br>
+                            <em>HACCP 인증</em> 받은 제품을 공급합니다
+                        </h2>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li class="icon1">
+                                <a href="#n">
+                                    <h3>원종</h3>
+                                    <div class="box">
+                                        <div class="icon_wrap">
+                                            <span class="icon">아이콘</span>
+                                            <span class="plus">플러스</span>
+                                        </div>
+                                        <div class="txt">
+                                            <div class="txt_over">
+                                                <strong>원종</strong>
+                                                <span>가장 우수한 품종 ‘아바 에이커 플러스’</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="icon2">
+                                <a href="#n">
+                                    <h3>부화</h3>
+                                    <div class="box">
+                                        <div class="icon_wrap">
+                                            <span class="icon">아이콘</span>
+                                            <span class="plus">플러스</span>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>부화</strong>
+                                            <span>이노보젝터 등의 
+                                                첨단 설비 운영, 
+                                                오염 차단 방역체제</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="icon3">
+                                <a href="#n">
+                                    <h3>사료</h3>
+                                    <div class="box">
+                                        <div class="icon_wrap">
+                                            <span class="icon">아이콘</span>
+                                            <span class="plus">플러스</span>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>사료</strong>
+                                            <span>원종계·종계·육계 
+                                                전문 사료, 
+                                                친환경 HACCP 인증  
+                                                </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="icon4">
+                                <a href="#n">
+                                    <h3>종계</h3>
+                                    <div class="box">
+                                        <div class="icon_wrap">
+                                            <span class="icon">아이콘</span>
+                                            <span class="plus">플러스</span>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>종계</strong>
+                                            <span>최신 급수, 환기 
+                                                자동조절 시스템, 
+                                                난방 시스템과 방역 체계</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="icon5">
+                                <a href="#n">
+                                    <h3>생산</h3>
+                                    <div class="box">
+                                        <div class="icon_wrap">
+                                            <span class="icon">아이콘</span>
+                                            <span class="plus">플러스</span>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>생산</strong>
+                                            <span>HACCP 인증 도계장, 
+                                                QGS, 에어칠링 시스템 
+                                                등 첨단 설비
+                                                </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="icon6">
+                                <a href="#n">
+                                    <h3>제품</h3>
+                                    <div class="box">
+                                        <div class="icon_wrap">
+                                            <span class="icon">아이콘</span>
+                                            <span class="plus">플러스</span>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>제품</strong>
+                                            <span>실시간 위치기반 
+                                                콜드체인 시스템
+                                                </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="esg">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>ESG Management</strong> 
+                        <h2>지속가능을 위한<br>
+                            사회적 ESG경영을 실천합니다
+                        </h2>
+                    </div>
+                    <div class="list">
+                        <ul> 
+                            <li class="bg1">
+                                <a href="#n">
+                                    <h3>Environment</h3>
+                                    <strong>환경</strong>
+                                    <ul>
+                                        <li>탄소, 온실가스 절감</li>
+                                        <li>에너지 효율 개선</li>
+                                        <li>폐기물 리사이클</li>
+                                        <li>환경친화적 포장재 사용 및 재활용</li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="bg2">
+                                <a href="#n">
+                                    <h3>Social</h3>
+                                    <strong>사회</strong>
+                                    <ul>
+                                        <li>사회공헌사업 확대</li>
+                                        <li>장애인 취업 확대</li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="bg3">
+                                <a href="#n">
+                                    <h3>Governance</h3>
+                                    <strong>지배구조</strong>
+                                    <ul>
+                                        <li>산업재해 관리 및 직원 복지 개선</li>
+                                        <li>직원 및 고객 만족도 개선</li>
+                                    </ul>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="food">
+                <div class="wrapper">
+                    <div class="contents">
+                        <div class="photo"><img src="images/main/food_bg01.jpg" alt="닭고기"></div>
+                        <div class="txt_box">
+                            <div class="tit">
+                                <strong>Food Tourism </strong>
+                                <h2>직접 키운 맛있는 닭고기<br>
+                                    체리부로 제품투어</h2>
+                            </div>
+                            <div class="icon_box">
+                                <ul>
+                                    <li>
+                                        <a href="#n">
+                                            <span class="icon_box01">아이콘</span>
+                                            <span class="txt">신선</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <span class="icon_box02">아이콘</span>
+                                            <span class="txt">특수부위</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <span class="icon_box03">아이콘</span>
+                                            <span class="txt">델리퀸</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#n">
+                                            <span class="icon_box04">아이콘</span>
+                                            <span class="txt">가공</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
