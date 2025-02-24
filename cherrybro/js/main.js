@@ -36,5 +36,16 @@ $(document).ready(function(){
         
     /**************************** visual 팝업 (종료) ************************************/
     
-   
+    /**************************** esg on (시작) ************************************/
+
+    $('.esg .list > ul > li').on('mouseenter', function(){
+        $('.esg .list > ul > li').removeClass('on')
+		$(this).addClass('on');	
+	});
+    $('.esg .list > ul').on('mouseleave', function(){
+        $('.esg .list > ul > li').removeClass('on')
+	});
+
+    /**************************** esg on (종료) ************************************/
+
 })//$(document).ready

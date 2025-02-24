@@ -35,6 +35,10 @@ header .gnb .gnb_wrap ul li a {
     line-height: 120px;
     text-align: center;
 }
+header .gnb .gnb_wrap ul li a:hover {
+    color: #D80E19;
+    font-weight: 700;
+}
 header .gnb .gnb_wrap ul li ul {
     display: none;
 }
