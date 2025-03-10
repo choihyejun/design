@@ -19,23 +19,19 @@ body, html {
     margin: 0 auto;
 }
 #wrap {
-    width: 100%;
+    min-width: 1420px;
     overflow: hidden; 
     /* wrap 영역 밖으로 나간 요소는 숨김처리  absolute가 대부분 나감. */
     position: relative; /* header 정렬의 기준값 */
 }
-@media screen and (max-width:1740px){
+@media screen and (max-width:1820px){
+                /*1700/마진여백계산*/
                         .wrapper {
-                            width: auto; 
+                            width: auto;
+                            min-width : 1260px;
                             /* 원래 너 하던대로해 - block요소 
                             - 감싸는 요소의 넓이의 100% 
                             - 100%로 주면 margin과 충돌 그래서 auto */
-                            margin: 0 20px;
+                            margin: 0 60px;
                         }
 }/*media*/
-
-@media screen and (max-width:1260px){ 
-    body, html {
-        font-size: 16px;
-    }
-}/* media */

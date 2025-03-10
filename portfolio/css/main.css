@@ -8,6 +8,54 @@
 @import url(common.css);
 @import url(layout.css); 
 
-.visual h2 {
-    display: none;
+.visual_txt h2 {
+    padding: 52px 0;
+    font-family: 'Boska-Bold';
+    font-size: 280px;
+    text-align: center;
+    color: #1d1d1d; 
 }
+.photo_resize {
+    margin: 150px 0 0 0;
+}
+.photo_resize .photo {
+    overflow: hidden;
+    height: 334px;
+    width: 50%;
+    margin: 0 auto;
+}
+.photo_resize .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile .inner {
+    margin: 79px 0 0 0;
+    border-top: 1px solid #1D1D1D;
+}
+.profile .tit strong {
+    margin: 28px 0 0 0;
+    display: inline-block;
+    padding: 3px 16px;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+    font-size: 22px;
+    border-radius: 50px;
+}
+.profile .list {
+    display: flex;
+}
+.profile .list .list1 {
+    width: 32%;
+}
+.profile .list h3 {
+    font-family: 'Boska-Bold';
+    font-size: 160px;
+}
+.profile .list .list2 {
+    width: 35%;
+}
+.profile .list .list3 {
+    width: 32%;
+}
+
