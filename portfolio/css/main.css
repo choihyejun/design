@@ -29,6 +29,11 @@
     height: 100%;
     object-fit: cover;
 }
+
+.profile {
+    margin-bottom: 90px;
+    color: #1d1d1d;
+}
 .profile .inner {
     margin: 79px 0 0 0;
     border-top: 1px solid #1D1D1D;
@@ -42,20 +47,255 @@
     font-size: 22px;
     border-radius: 50px;
 }
-.profile .list {
+.profile .box {
     display: flex;
+    padding: 40px 0 0 0;
 }
-.profile .list .list1 {
-    width: 32%;
+.profile .box1 {
+    width: 29%;
 }
-.profile .list h3 {
+.profile .list1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.profile .list1 h2 {
     font-family: 'Boska-Bold';
     font-size: 160px;
 }
-.profile .list .list2 {
-    width: 35%;
+.profile .list1 .icon {
+    margin-top: 47px;
 }
-.profile .list .list3 {
-    width: 32%;
+.profile .list1 .icon ul {
+    position: relative;
 }
-
+.profile .list1 .icon ul::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 90px;
+    height: 90px;
+    background-image: url(../images/main/user_icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: #111111;
+}
+.profile .list1 .icon ul li {
+    padding-left: 110px;
+    color: #555555;
+    line-height: 1.4;
+}
+.profile .box2 {
+    width: 67%;
+    display: flex;
+    line-height: 1.7;
+}
+.profile .list2 {
+    width: 54%;
+    border-right: 1px solid #CCCCCC;
+    padding-left: 94px;
+}
+.profile .list2 h3 {
+    display: block;
+    font-size: 27px; 
+    font-weight: 700; 
+}
+.profile .list2 ul {
+    margin-top: 10px;
+}
+.profile .dot ul li ::before {
+    /*홈페이지 기능 -> 문서화*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 3px;
+    height: 3px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background: #1d1d1d;
+}
+.profile .list2 .about {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.profile .list2 .about ul li {
+    position: relative;
+    padding-left: 15px;
+}
+.profile .list2 .about li span {
+    padding-left: 52px;
+    color: #555555;
+}
+.profile .list2 .career {
+    padding: 40px 0 40px 0 ;
+    border-bottom: 1px solid #CCCCCC;
+} 
+.profile .list2 .career ul li {
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.profile .list2 .career ul li span {
+    padding-right: 47px;
+    color: #555555;
+}
+.profile .list2 .education {
+    padding: 40px 0 0 0;
+}
+.profile .list2 .education li {
+    padding-bottom: 18px;
+}
+.profile .list2 .education li p {
+    color: #555555;
+}
+.profile .list3 {
+    width: 46%;
+}
+.profile .list3 h3 {
+    display: block;
+    font-size: 27px;
+    font-weight: 700;
+}
+.profile .list3 ul {
+    margin-top: 10px;
+}
+.profile .list3 .lisence {
+    padding: 0 0 40px 47px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.profile .list3 .lisence ul li {
+    position: relative;
+    padding-left: 15px;
+}
+.profile .list3 .skill {
+    padding: 40px 0 0 47px;
+}
+.profile .list3 .skill ul {
+    display: flex;
+    flex-wrap: wrap; /*여러줄 허용*/
+}
+.profile .list3 .skill ul li {
+    width: 50%;
+    padding-left: 47px;
+    position: relative; /*before정렬의 기준!*/
+    line-height: 2.8;
+}
+.profile .list3 .skill ul li::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 37px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+.profile .list3 .skill ul li.skill_photo::before  {
+    background-image: url(../images/main/photoshop.png);
+}
+.profile .list3 .skill ul li.skill_ill::before  {
+    background-image: url(../images/main/illustrator.png);
+}
+.profile .list3 .skill ul li.skill_ind::before  {
+    background-image: url(../images/main/inDesign.png);
+}
+.profile .list3 .skill ul li.skill_xd::before  {
+    background-image: url(../images/main/xd.png);
+}
+.profile .list3 .skill ul li.skill_fi::before  {
+    background-image: url(../images/main/figma.png);
+}
+.profile .list3 .skill ul li.skill_html::before  {
+    background-image: url(../images/main/html.png);
+}
+.profile .list3 .skill ul li.skill_css::before  {
+    background-image: url(../images/main/css.png);
+}
+.profile .list3 .skill ul li.skill_power::before  {
+    background-image: url(../images/main/powerpoint.png);
+}
+.profile .list3 .skill ul li.skill_ex::before  {
+    background-image: url(../images/main/excel.png);
+}
+.profile .list3 .skill ul li.skill_word::before  {
+    background-image: url(../images/main/word.png);
+}
+@media screen and (max-width:1820px){
+    .profile .box {
+        display: block;
+    }
+    .profile .box1 {
+        width: 100%;
+    }
+    .profile .list1 {
+        flex-direction: row;
+    }
+    .profile .box2 {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .profile .list2 {
+        padding-left: 0px;
+    }
+}
+.work {
+    background-color: #1d1d1d;
+}
+.work .tit  strong {
+    margin: 28px 0 0 0;
+    display: inline-block;
+    padding: 3px 16px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50px;
+}
+.work .tit h2 {
+    padding: 52px 0;
+    font-family: 'Boska-Bold';
+    font-size: 280px;
+    text-align: center;
+    color: #fff;
+}
+.work .tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+.work .tab .tab_list {
+    background-color: #323232;
+    border-radius: 50px;
+    padding: 18px 30px;
+    display: inline-block;
+}
+.work .tab .tab_list ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+}
+.work .tab .tab_list ul li button {
+    padding: 3px 16px;
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.work .tab .tab_list ul li.active button {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #1D1D1D;
+}
+.work .tab .more a {
+    display: inline-block;
+    padding: 3px 16px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+}

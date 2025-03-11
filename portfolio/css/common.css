@@ -19,7 +19,7 @@ body, html {
     margin: 0 auto;
 }
 #wrap {
-    min-width: 1420px;
+    min-width: 1420px; /*1420이후로는 스크롤_아니면 사이즈별로 대응*/
     overflow: hidden; 
     /* wrap 영역 밖으로 나간 요소는 숨김처리  absolute가 대부분 나감. */
     position: relative; /* header 정렬의 기준값 */
