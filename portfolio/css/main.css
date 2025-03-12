@@ -299,3 +299,87 @@
     border-radius: 30px;
     border: 1px solid #fff;
 }
+
+.work .list {
+    margin: 66px 0 0 0;
+    color: #fff;
+}
+.work .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.work .list ul li {
+    width: 47%;
+}
+.work .list ul li a {
+    display: block;
+}
+.work .list ul li a .photo {
+    height: 507px;
+    overflow: hidden;
+}
+.work .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.work .list ul li a .photo_txt {
+    padding: 41px 0 41px 0;
+    text-align: center;
+}
+.work .list ul li a .photo_txt .cate {
+    padding: 7px 15px;
+    border: 1px solid #fff;
+    font-size: 15px;
+    border-radius: 20px;
+}
+.work .list ul li a .photo_txt h3 {
+    padding: 17px 0 0 0;
+    font-size: 27px;
+}
+@media screen and (max-width:1820px){
+    .work .tit h2 {
+        font-size: 218px;
+    }
+    .work .list {
+        margin : 58px 0 0 0;
+    }
+    .work .list ul li a .photo {
+        height: 383px;
+    }
+    .work .list ul li a .photo_txt {
+        padding: 36px 0 36px 0;
+    }
+    .work .list ul li a .photo_txt h3 {
+        padding: 16px 0 0 0;
+        font-size: 26px;
+    }
+}
+
+footer {
+    padding: 116px 0 0 0;
+    background-color: #1D1D1D;
+    color: #fff;
+}
+footer .wrapper {
+    border-top: 1px solid rgba(255, 255, 255, 0.3)
+}
+footer .wrapper .f_info ul {
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 300px;
+}
+footer .wrapper .f_tit {
+    padding: 40px 0;
+    font-family: 'Boska-Bold';
+    font-size: 280px;
+    text-align: center;
+}
+footer .wrapper .copyright {
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+
