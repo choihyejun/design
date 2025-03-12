@@ -7,6 +7,7 @@
 @import url(font.css);
 @import url(common.css);
 @import url(layout.css); 
+@import url(contents.css); 
 
 .visual_txt h2 {
     padding: 52px 0;

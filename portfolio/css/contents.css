@@ -1,0 +1,165 @@
+/*
+ * contents.css
+ * 콘텐츠 페이지 (웹사이트 소개) 스타일 저장
+*/
+
+/* 웹사이트 > 소개 */
+
+.cnt_tit {
+    margin: 164px 0 0 0;
+    border-top: 1px solid #8E8E8E;
+}
+.cnt_tit strong {
+    margin: 28px 0 0 0;
+    display: inline-block;
+    padding: 3px 16px;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+    font-size: 22px;
+    border-radius: 50px;
+}
+.cnt_tit h2 {
+    padding: 52px 0;
+    font-size: 64px;
+    font-weight: 800;
+    text-align: center;
+    color: #1d1d1d;
+}
+.cnt_txt {
+    padding: 26px 0 26px 0;
+    border-top: 1px solid #8E8E8E;
+    border-bottom: 1px solid #8E8E8E;
+}
+.cnt_txt ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.cnt_txt ul li {
+    font-size: 22px;
+    color: #1D1D1D;
+    padding-bottom: 10px;
+}
+.cnt_txt ul li strong {
+    padding-left: 20px;
+    font-weight: 800;
+}
+.cnt_txt ul li span {
+    padding: 0 11px;
+}
+.cnt_list {
+    margin: 57px 0 0 0;
+    text-align: center;
+    padding-bottom: 46px;
+    border-bottom: 1px solid #8E8E8E;
+}
+.cnt_list a {
+    display: block
+}
+.cnt_list .cnt_photo img {
+    width: 100%;
+    height: 896px;
+    object-fit: cover;;
+}
+.cnt_list .cnt_butn {
+    margin-top: 47px;
+    font-size: 27px;
+    font-weight: 800;
+    display: inline-block;
+    padding: 23px 100px;
+    border-radius: 50px;
+    border: 1px solid #1D1D1D;
+    color: #1D1D1D;
+}
+.cnt_info .info_bg {
+    display: flex;
+    flex-direction: row;
+    color: #1d1d1d;
+    padding: 36px 0 38px 0;
+    border-bottom: 1px solid #8E8E8E;
+    line-height: 1.4;
+}
+.cnt_info .info_bg h3 {
+    width: 31%;
+    font-size: 27px;
+    font-weight: 800;
+}
+.cnt_info .info_bg .info_txt {
+    width: 68%;
+}
+.cnt_info .info_bg .info_txt span {
+    margin-bottom: 7px;
+}
+.cnt_info .info_bg .info_butn {
+    display: inline-block;
+    width: 60px;
+    border-radius: 30px;
+    border: 1px solid #1d1d1d;
+    font-size: 15px;
+    margin-right: 18px;
+    text-align: center;
+}
+.cnt_info .info_bg .info_col {
+    display: inline-block;
+    width: 115px;
+    border: 1px solid #8E8E8E;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 18px;
+    text-align: center;
+}
+.cnt_info .info_bg .col_red {
+    background-color: #D80E19;
+}   
+.cnt_info .info_bg .col_b {
+    background-color: #1D1D1D;
+}   
+.cnt_info .info_bg .col_y {
+    background-color: #FCB034;
+}   
+
+.cnt_info .info_bg .col_g {
+    background-color: #009944;
+}  
+
+
+/*
+.cnt_board {
+    margin-top: 140px;
+    display: flex;
+}
+.cnt_board .board_photo {
+    width: 60%;
+    background-color: #D9D9D9;
+    text-align: center;
+}
+.cnt_board .board_photo img {
+    width: 81%;
+    padding: 5% 0;
+}
+.cnt_board .board_list {
+    width: 38%;
+}
+.cnt_board .board_list {
+    padding-left: 49px;
+}
+.cnt_board .board_list .board_bg strong {
+    margin: 28px 0 0 0;
+    display: inline-block;
+    padding: 3px 16px;
+    border: 1px solid #1d1d1d;
+    color: #1d1d1d;
+    font-size: 22px;
+    border-radius: 50px;
+}
+.cnt_board .board_list .board_bg .board_txt {
+    padding: 27px 0 0 0;
+}
+*/ 
+
+
+
+
+
+
