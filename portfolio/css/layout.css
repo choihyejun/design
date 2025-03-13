@@ -40,3 +40,10 @@ header .gnb_open::before {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+@media screen and (max-width:1820px){
+    header {
+        height: 97px;
+    }
+
+}
