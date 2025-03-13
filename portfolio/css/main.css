@@ -9,23 +9,19 @@
 @import url(layout.css); 
 @import url(contents.css); 
 
-.visual_txt h2 {
-    padding: 52px 0;
+.visual_fit .tit h2 {
+    color: #1d1d1d;
     font-family: 'Boska-Bold';
-    font-size: 280px;
+    font-size: 275px;
     text-align: center;
-    color: #1d1d1d; 
+    margin: 148px 0 0 0;
+    border-top: 1px solid #8E8E8E;;
+
 }
-.photo_resize {
-    margin: 150px 0 0 0;
+.visual_fit .tit .photo {
+    height: 600px;
 }
-.photo_resize .photo {
-    overflow: hidden;
-    height: 334px;
-    width: 50%;
-    margin: 0 auto;
-}
-.photo_resize .photo img {
+.visual_fit .tit .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -260,17 +256,17 @@
     border-radius: 50px;
 }
 .work .tit h2 {
-    padding: 52px 0;
     font-family: 'Boska-Bold';
     font-size: 280px;
     text-align: center;
     color: #fff;
 }
+/*
 .work .tab {
     text-align: center;
-   /* display: flex;
+   display: flex;
     justify-content: space-between;
-    align-items: center;*/
+    align-items: center;
     color: #fff;
 }
 .work .tab .tab_list {
@@ -301,60 +297,52 @@
     border-radius: 30px;
     border: 1px solid #fff;
 }
+*/
 
 .work .list {
-    margin: 66px 0 0 0;
-    color: #fff;
+    position: relative;
+    margin: 20px 0 0 0;
 }
-.work .list ul {
-    display: flex;
-    justify-content: space-between;
-}
-.work .list ul li {
-    width: 47%;
-}
-.work .list ul li a {
+.work .list .swiper ul li a {
     display: block;
 }
-.work .list ul li a .photo {
-    height: 507px;
+.work .list .swiper ul li .photo {
     overflow: hidden;
+    height: 360px;
 }
-.work .list ul li a .photo img {
+.work .list .swiper ul li .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.work .list ul li a .photo_txt {
-    padding: 41px 0 41px 0;
+.work .list .swiper ul li a .photo_txt {
+    padding: 38px 0;
     text-align: center;
+    color: #fff;
 }
-.work .list ul li a .photo_txt .cate {
+.work .list .swiper ul li a .photo_txt .cate {
     padding: 7px 15px;
     border: 1px solid #fff;
     font-size: 15px;
     border-radius: 20px;
 }
-.work .list ul li a .photo_txt h3 {
+.work .list .swiper ul li a .photo_txt h3 {
     padding: 17px 0 0 0;
-    font-size: 27px;
+    font-size: 25px;
 }
 @media screen and (max-width:1820px){
     .work .tit h2 {
         font-size: 218px;
     }
-    .work .list {
-        margin : 58px 0 0 0;
-    }
     .work .list ul li a .photo {
-        height: 383px;
+        height: 350px;
     }
     .work .list ul li a .photo_txt {
-        padding: 36px 0 36px 0;
+        padding: 30px 0;
     }
     .work .list ul li a .photo_txt h3 {
         padding: 16px 0 0 0;
-        font-size: 26px;
+        font-size: 22px;
     }
 }
 
