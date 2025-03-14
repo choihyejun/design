@@ -14,9 +14,8 @@
     font-family: 'Boska-Bold';
     font-size: 275px;
     text-align: center;
-    margin: 148px 0 0 0;
-    border-top: 1px solid #8E8E8E;;
-
+    margin: 90px 0 0 0;
+    border-top: 1px solid #8E8E8E;
 }
 .visual_fit .tit .photo {
     height: 600px;
@@ -32,7 +31,7 @@
     color: #1d1d1d;
 }
 .profile .inner {
-    margin: 79px 0 0 0;
+    margin: 70px 0 0 0;
     border-top: 1px solid #8E8E8E;
 }
 .profile .tit strong {
@@ -61,7 +60,7 @@
     font-size: 160px;
 }
 .profile .list1 .icon {
-    margin-top: 47px;
+    margin-top: 60px;
 }
 .profile .list1 .icon ul {
     position: relative;

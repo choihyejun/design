@@ -6,7 +6,7 @@
 /* 웹사이트 > 소개 */
 
 .cnt_tit {
-    margin: 164px 0 0 0;
+    margin: 90px 0 0 0;
     border-top: 1px solid #8E8E8E;
 }
 .cnt_tit strong {
@@ -40,6 +40,7 @@
     font-size: 22px;
     color: #1D1D1D;
     padding-bottom: 10px;
+    position: relative;
 }
 .cnt_txt ul li strong {
     padding-left: 20px;
